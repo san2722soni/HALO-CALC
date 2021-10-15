@@ -13,7 +13,6 @@
 }
 
 body {
-    overflow: hidden;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -25,7 +24,6 @@ body {
     grid-template-rows: minmax(3.5rem, auto) repeat(5, minmax(1.5em, 3em));
     grid-template-columns: repeat(5, minmax(1.5em, 3em));
     align-content: center;
-    height: auto;
     gap: 0.6em;
     background: black;
     padding: 10px;
@@ -87,4 +85,23 @@ body {
 
 .backspace.md-1point3em {
     font-size: 1.3em;
+}
+
+@media screen and (max-height: 370px) {
+    .container {
+    grid-template-rows: minmax(3.5rem, auto) repeat(5,
+    minmax(calc(1.5em / 2),
+    calc(3em / 2)));
+    grid-template-columns: repeat(5,
+    minmax(calc(1.5em / 2),
+    calc(3em / 2)));
+    }
+
+    .btn {
+        font-size: 0.7rem;
+    }
+
+    .backspace.md-1point3em {
+        font-size: 0.7rem;
+    }
 }
