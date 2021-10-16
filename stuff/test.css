@@ -1,0 +1,99 @@
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: url("images/82b73aa25a04473495b527e83ae8e1a9.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    position: relative;
+    overflow-y: hidden;
+    cursor: pointer;
+}
+
+.fly-navigaion{
+    width: 200px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    animation: fly 7s linear infinite;
+    cursor: pointer;
+    
+}
+
+@keyframes fly{
+    0%{
+        bottom: -20%;
+        display: none;
+    }
+    20%{
+        bottom: 20%;
+    }
+    40%{
+        bottom: 40%;
+    }
+    60%{
+        bottom: 60%;
+    }
+    80%{
+        bottom: 80%;
+    }
+    100%{
+       bottom: 100%;
+    }
+}
+
+
+.container .fly-navigaion img{
+    width: 100%;
+    z-index: 1;
+}
+
+.container .fly-navigaion .fa-calendar,.fa-clock,.fa-exchange-alt,.fa-exchange-alt,.fa-weight{
+    color: #ef7819;
+    font-size: 21px;
+    transform: translateY(4px);
+}
+
+.fa-circle{
+    color: black;
+    font-size: 50px;
+    transform: translateY(-30px);
+}
+
+.popup{
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.popup svg{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
