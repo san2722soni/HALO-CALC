@@ -1,0 +1,652 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;1,300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Ubuntu:ital,wght@0,400;1,300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,300&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+html,body{
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}
+
+:root{
+    --primary-bg-color : #3b3c40;
+    --secondary-bg-color: #e3635b;
+    --third-bg-color: #4d453f;
+    --C-bg-color: #fcb82b;
+    --equall-bg-color: #e9594e;
+    --backspace-bg-color: #2c2d31;
+    
+}
+
+body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 0px;
+    background-color:#4c5157;
+    background-image: linear-gradient(90deg, #4c5157 -105%, #292d31 86%);
+}
+
+
+
+.calc-container{
+    max-width: 90%;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(to right , #383b41, #303338 , #232629 
+    , #232527 , #1f2125);
+    padding: 2%;
+    border-radius: 7px;
+    box-shadow: 
+    inset 0 -3em 3em rgba(0,0,0,0.1), 
+    0.5em 0.5em 2em #171a1c;
+}
+
+  .calc-container .calc{ 
+    flex-basis: 27%;
+    min-width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1c1e22;
+    padding: 1% 1.5%;
+    border-radius: 6px;
+}
+
+/* calc , output section  starts */
+  .calc .output{
+    width: 100%;
+    flex-basis: 27%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+  .calc .output #history{
+    text-align: right;
+    height: 70px;
+}
+
+  .calc .output #history #history-value{
+    color: #777d7d;
+    margin-top: 10px;
+    margin-right: 30px;
+    font-size: 20px;
+}
+
+  .calc .output #output-val{
+    text-align: right;
+}
+
+  .calc .output #output-val #output-value{
+    margin-right: 20px;
+    color: #a5aead;
+    font-size: 40px;
+    
+}
+
+  .calc .output #temp-val{
+    text-align: left;
+    margin-top: 10px;
+}
+
+  .calc .output #temp-val #temp-value{
+    margin-right: 20px;
+    color: #a5aead;
+    font-size: 20px;
+    
+}
+/* calc , output section ends */
+
+/* calc , keyboard section starts */
+  .calc .keyboard{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4 , 1fr);
+    grid-gap: 12px;
+}
+
+  .calc .keyboard .backspace{
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: var(--backspace-bg-color);
+    color: #535758;
+    font-size: 22px;
+    box-shadow: 9px 5px 4px -1px #101113;    
+    height: 3.8rem;
+    cursor: pointer;
+    
+}
+
+  .calc .keyboard .equall{
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: var(--equall-bg-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 32px;
+    box-shadow: 9px 5px 4px -1px #101113;  
+    height: 3.8rem;
+    cursor: pointer;
+}
+
+.operator,.number{
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    font-size: 20px;
+    height: 3.8rem;
+    cursor: pointer;
+}
+
+
+.operator{
+    background-color: var(--secondary-bg-color);
+    color: #dee1e7;
+    font-size: 25px;
+    box-shadow: 9px 5px 4px -1px #101113;  
+}
+
+.operator::after{
+    box-shadow: -2px -3px 4px #48484a;
+}
+
+.number{
+    background-color: #2c2d31;
+    color: #afb4b2;
+    box-shadow: 9px 5px 4px -1px #101113;   
+}
+
+.clear{
+    background-color: var(--C-bg-color);
+    color: #fff;
+    font-weight: 700;
+}
+    
+.other{
+    background-color: #4c453a;
+    color: #bb9f5d;   
+}
+/*calc , keyboard section ends */
+
+/* <!-- AGE calc div starts --> */
+
+.AGE{
+    display: none !important;
+    justify-content: space-evenly !important;
+    padding: 1% 1% !important;
+}
+
+.AGE .input_age{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+}
+
+.AGE .input_age .date_age input{
+    color: #080808;
+    padding: 7.2px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.AGE .input_age .calculate input{
+    color: #080808;
+    padding: 8px;
+    font-size: 13.5px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: white;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.AGE .output_age{
+    display: none;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 2%;
+    height: 70%;
+    transition: 2s;
+}
+
+.AGE .output_age .age_now{
+    text-align: center;
+    color: #e3635b;
+    padding: 4%;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+.AGE .output_age .age_now #age-now-years{
+    display: block;
+    margin-bottom: 2%;
+}
+
+#age-now-years span{
+    font-size: 6rem;
+    color: white;
+}
+
+.AGE .output_age .age_box{
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(3 , 1fr);
+    place-items: center;
+}
+
+.AGE .output_age .age_box .box{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #111314;
+    font-family: 'Poppins' , sans-serif;
+    border-radius: 4px;
+    margin: 5%;
+    transition: all 0.5s;
+}
+
+.AGE .output_age .age_box .box:hover{
+    transform: scale(1.05);
+    background-image: linear-gradient(to right , #2d3035, #25282c , #222529 
+    , #202327 , #1e2025 , #17191d);
+    box-shadow: 7px 6px 3px 1px #17181b;
+}
+
+.AGE .output_age .age_box .box span{
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.AGE .output_age .age_box h3{
+    color: #a5a29f;
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 2%;
+}
+/* <!-- AGE calc div ends --> */
+
+/* <!---------------- AREA calc div starts ----------------> */
+
+.AREA{
+    display: grid !important;
+    justify-content: space-evenly !important;
+    padding: 1% 1% !important;
+}
+
+.AREA .navigate{
+   width: 100%;
+   height: 50px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.AREA .navigate i{
+    display: inline-block;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 5px 5px 0px 0px;
+}
+
+.AREA .shapes{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2,1fr);
+    border: 2px solid #fff;
+    place-items: center;
+}
+
+.AREA .shapes div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
+    cursor: pointer;
+    padding-top: 12px;
+}
+
+.AREA .shapes .shape_name{
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    text-transform: capitalize;
+    transition: 0.5s;
+    transform: translateX(300px) translateY(-50px);
+}
+
+.AREA .shapes div img{
+    transition: 0.5s;
+}
+
+.AREA .shapes div:hover img{
+    transform: translateY(-150px);
+}
+
+.AREA .shapes div:hover .shape_name{
+    transform: translateY(-50px) translateX(0px);
+}
+
+.AREA .s_img{
+    display: none;
+}
+
+/* <!-------------- AREA calc div ends ----------------------> */
+
+/* <!-------------- Output calc div starts ----------------------> */
+
+.Enter_values{
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    display: none;
+    grid-template-columns: repeat(1 , 100%);
+    grid-template-rows: repeat(3, 55px);
+}
+
+.Enter_values h1{
+    color: #c04e48;
+}
+
+.Enter_values h1,h2,h3,h4,span{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+
+.Enter_values h4 span {
+    font-size: 18.5px;
+}
+
+.Enter_values .enter_value{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Enter_values .enter_value input{
+    width: 170px;
+    padding: 7px 5px;
+    outline: none;
+    font-size: 14px;
+    margin: 5px 0px;
+}
+
+.Enter_values #show_sol{
+    transition: 0.5s all;
+}
+
+.Enter_values #show_sol h1{
+    padding: 10px 0px;
+    padding-bottom: 15px;
+}
+/* <!-------------- Output calc div ends ----------------------> */
+
+/* calc , type section starts */
+.calc-container .calc-type{
+    flex-basis: 55%;
+    display: grid;
+    align-content: space-around;
+    justify-content: center;
+    font-style: italic;
+    font-weight: 300;
+} 
+
+.calc-container .calc-type .type-heading{
+    color: #dee1e7;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-size: 13px;
+    font-style: normal;
+}
+
+.calc-container .calc-type .calc-options{
+    display: grid;
+    grid-template-rows: repeat(2 , 100px);
+    grid-template-columns: repeat(5 , 100px);
+    grid-gap: 20px;
+}
+
+.calc-options .select{
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    position: relative;
+    background: #111314;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.calc-options .select:hover{
+    transform: scale(1.05);
+    background-image: linear-gradient(to right , #2d3035, #25282c , #222529 
+    , #202327 , #1e2025 , #17191d);
+    box-shadow: 7px 6px 3px 1px #17181b;
+}
+
+.calc-options .select:hover .fas{
+    color: #dee1e7;
+}
+
+.calc-options .select:hover .far{
+    color: #dee1e7;
+}
+
+.calc-options .select input{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.calc-options .select input[type="checkbox"]{
+    cursor: pointer;
+}
+
+.calc-options .select input[type="checkbox"]::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f00c';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: #e4817b;
+    color: #dee1e7;
+    display: none;
+    border-radius: 2px;
+    font-size: 10px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.calc-options .select input[type="checkbox"]:checked::after{
+    display: block;
+}
+
+.select .option{
+    text-align: center;
+}
+
+.select .option .fas,.far{
+    color: #7f828d;
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+.select .option p{
+    color: #525762;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.calc-show{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: normal;
+    color: #dee1e7;
+}
+
+.calc-show h2{
+    letter-spacing: 2px;
+}
+
+.calc-show h3{
+    font-size: 20px;
+    margin-right: 10%;
+    color: #a53832;
+}
+
+.calc-type .controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.calc-type .controls #Previous{
+    padding: 15px 35px;
+    border-radius: 3px;
+    border: none;
+    font-weight: 900;
+    font-size: 15px;
+    color: #dee1e7;
+    background-image: linear-gradient(to right , #2d3035, #2e3338 , #2b2e33 
+    , #292d33 , #2a2d35 , #23252b);
+    box-shadow: 9px 5px 4px -1px #1b1d21;  
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.calc-type .controls #Next{
+    padding: 12px 35px;
+    border-radius: 3px;
+    border: none;
+    font-weight: 900;
+    font-size: 15px;
+    color: #dee1e7;
+    background-color: #e3635b;
+    box-shadow: 0px -1px 7px 2px #e3635b;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width:1370px){
+
+    .calc-container{
+        width: 99%;
+    }
+
+    .calc{
+        display: none;
+    }
+}
+
+/* Snackbar code here  -------------------------------------*/
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden;
+    min-width: 250px; 
+    margin-left: -125px;
+    background-color: #333; 
+    color: #fff;
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px;
+    position: fixed; 
+    z-index: 1; 
+    left: 50%; 
+    bottom: 30px; 
+}
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {
+        bottom: 0; 
+        opacity: 0;
+    }
+    to {
+        bottom: 30px; 
+        opacity: 1;
+    }
+  }
+  
+  @keyframes fadein {
+    from {
+        bottom: 0; 
+        opacity: 0;
+    }
+    to {
+        bottom: 30px; 
+        opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {
+        bottom: 30px; 
+        opacity: 1;
+    }
+    to {
+        bottom: 0; 
+        opacity: 0;
+    }
+  }
+  
+  @keyframes fadeout {
+    from {
+        bottom: 30px; 
+        opacity: 1;
+    }
+    to {
+        bottom: 0; 
+        opacity: 0;
+    }
+}
