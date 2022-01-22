@@ -114,35 +114,35 @@
 			</div>
 
 			<div class="shapes" id="s">
-				<div id="s1">
+				<div id="s0">
 					<img src="images/square (1).png" width="70px" alt="square">
 					<h3 class="shape_name">square</h3>
 				</div>
-				<div id="s2">
+				<div id="s1">
 					<img src="images/rectangular-shape-outline.png" width="100px" alt="square">
 					<h3 class="shape_name">rectangle</h3>
 				</div>
-				<div id="s3">
+				<div id="s2">
 					<img src="images/triangle.png" width="70px" alt="square">
 					<h3 class="shape_name">triangle</h3>
 				</div>
-				<div id="s4">
+				<div id="s3">
 					<img src="images/new-moon.png" width="70px" alt="square">
 					<h3 class="shape_name">circle</h3>
 				</div>
-				<div>
+				<div id="s4">
 					<img src="images/parallelogram.png" width="100px" alt="square">
 					<h3 class="shape_name">parallelogram</h3>
 				</div>
-				<div>
+				<div id="s5">
 					<img src="images/trapezium.png" width="80px" alt="square">
 					<h3 class="shape_name">trapezium</h3>
 				</div>
-				<div>
+				<div id="s6">
 					<img src="images/circle.png" width="80px" alt="square">
 					<h3 class="shape_name">annulus</h3>
 				</div>
-				<div>
+				<div id="s7">
 					<img src="images/ellipse.png" width="85px" alt="square">
 					<h3 class="shape_name">ellipse</h3>
 				</div>
@@ -154,7 +154,7 @@
 
 			<div class="Enter_values" id="eN">
 				<h1 id="shape_title">Square</h1>
-				<h4 style="color:#fff;">
+				<h4 style="color:#fff;" id="random">
 					Solve for Area
 				</h4>
 
@@ -164,9 +164,10 @@
 
 				<div class="enter_value">
 					<div style="display: flex; justify-content: space-between; flex-direction: column;">
-						<input type="text" id="input_num" placeholder="Enter Value">
-						<input type="text" id="input_num_2" placeholder="Enter value breath">
-						<input type="text" id="input_num_3" placeholder="Enter value idk">
+						<input type="text" id="input_num" placeholder="Enter Value" class="input_fields">
+						<input type="text" id="input_num_2" placeholder="Enter value breath" class="input_fields">
+						<input type="text" id="input_num_3" placeholder="Enter value idk" class="input_fields">
+						
 					</div>
 					<button id="done">GO!</button>
 					<style>
@@ -182,7 +183,7 @@
 				<div id="show_sol">
 					<h1>Solution</h1>
 					<h2>
-						<span id="here1">A</span> = <span id="here2">a<sup style="font-size: 17px;">2</sup></span> =
+						<span id="here1">A</span> = <span id="here2">a<sup style="font-size: 17px;">2</sup></span> = 
 						<span id="value">5</span> = <span id="real_answer"></span>
 					</h2>
 				</div>
