@@ -285,7 +285,8 @@ let inp2 = document.getElementById('input_num_2');
 let inp3 = document.getElementById('input_num_3');
 let img_change = document.getElementById('img_change');
 let here2 = document.getElementById('here2');
-
+let input_fields = document.querySelectorAll('.input_fields');
+let ransom = document.getElementById('random');
 
 show_sol.style.display = 'none';
 
@@ -297,9 +298,6 @@ function settingValues(flag_num, arr) {
     }
 
     done.onclick = function sub() {
-        // let val = inp.value;
-        // let val2 = inp2.value;
-        // let val3 = inp3.value;
 
         if (flag_num == 1) {
             inp2.value = 2;
@@ -314,13 +312,6 @@ function settingValues(flag_num, arr) {
             inp3.value;
         }
 
-        // if (checkinput(val, val2, val3)) {
-        //     value.innerHTML = val + ' x ' + val2 ;
-        //     formula.innerText = val * val2; // here same it goes 
-        //     real_answer.innerText = val * val2; // here same
-        //     show_sol.style.display = 'block';
-        //     here2.innerHTML = formu;
-        // }
 
         if (checkinput(inp.value, inp2.value, inp3.value)) {
             value.innerHTML = arr[1];
@@ -347,11 +338,20 @@ function settingValues(flag_num, arr) {
 
 }
 
-//changing the tabs accoring to the shape choosed
 
-let s1 = document.getElementById('s1');
-let s2 = document.getElementById('s2');
-let s3 = document.getElementById('s3');
+
+//------changing the tabs accoring to the shape choosed
+
+//getting all id's of the shapes . 
+let shapeIds = ["s0" , "s1" , "s2" , "s3" , "s4" , "s5" , "s6" , "s7"];
+let shape_name = [];
+shapeIds.forEach(function (shape) {
+    shape = document.getElementById(shape);
+    // console.log(shape);
+    shape_name.push(shape);
+    // console.log(shape_name);
+});
+
 let shapes = document.getElementById('s');
 let simg = document.getElementById('simg');
 let Enter_values = document.getElementById('eN');
@@ -374,83 +374,100 @@ function changeIncommon() {
     simg.style.display = 'block';
     Enter_values.style.display = 'grid';
     question.style.display = 'none';
+    show_sol.style.display = 'none';
+    inp.value = '';
+    inp2.value = '';
+    inp3.value = '';
+    formula.innerHTML = ' ';
 }
 
-s1.onclick = function s1() {
+shape_name[0].onclick = () => {
     changeIncommon();
     img_change.src = "images/Square-perimeter-removebg-preview.png";
     inp.placeholder = "Enter the Side";
+    formula.innerHTML = 'a' + '<sup style="font-size: 17px;">2</sup>';
     inp2.style.display = 'none';
     inp3.style.display = 'none';
-    let values = ['a' + '<sup style="font-size: 17px;">2</sup>', inp.value + '<sup style="font-size: 17px;">2</sup>', inp.value * inp.value];
-    let flag_num = 1;
-    settingValues(flag_num, values);
+    inp.oninput = () => {
+        let values = ['a' + '<sup style="font-size: 17px;">2</sup>', inp.value + '<sup style="font-size: 17px;">2</sup>', inp.value * inp.value];
+        let flag_num = 1;
+        settingValues(flag_num, values);
+    }
 }
 
-s2.onclick = function s2() {
+shape_name[1].onclick = () => {
     changeIncommon();
     img_change.src = "images/rectangle_perimeter-removebg-preview.png";
     inp2.placeholder = "Enter the breadth";
     inp.placeholder = "Enter the length";
     shape_title.innerText = 'Rectangle';
-    formula.innerText = 'L x B';
-    inp2.style.display = 'inline';
+    formula.innerHTML = 'L x B';
+    inp2.style.display = 'inline-block';
     inp3.style.display = 'none';
-    let values = ['L x B', inp.value + ' x ' + inp2.value, inp.value * inp2.value];
-    // let values = ['L x B', 9 + ' x ' + 8, 9 * 5];
-    let flag_num = 2;
-    settingValues(flag_num, values);
+
+    [inp, inp2].forEach(function (element) {
+        element.addEventListener("input", function () {
+            let values = [`L x B`, `${inp.value} x ${inp2.value}`, `${inp.value * inp2.value}`];
+            let flag_num = 2;
+            settingValues(flag_num, values);           
+        });
+    });
+
 }
 
-s3.onclick = function s3() {
+shape_name[2].onclick = () => {
     changeIncommon();
-    img_change.src = "";
+    img_change.src = "images/triangle-images-removebg-preview.png";
+    img_change.setAttribute('width', '250px');
     inp.placeholder = "Enter the base";
     inp2.placeholder = "Enter the height";
     shape_title.innerText = 'Triangle';
-    formula.innerHTML =
-        `<div style="position:absolute; display:inline-block;">
-        <sup style="font-size: 20px; position:absolute; bottom: 10px;">1</sup>` +
-    `   <span> - </span>`  +
-        `<sub style="font-size: 20px; position: absolute; top: 10px ">2</sub>
-        </div>`;
+    formula.innerHTML = `½ <span style="position: relative; font-size: 20px;" >x b x h</span>`;
     inp2.style.display = 'inline';
     inp3.style.display = 'none';
-    let values = [formula.innerHTML, formula.innerHTML + ' x ' + inp.value + ' x ' + inp2.value, 0.5 * inp.value * inp2.value];
-    let flag_num = 2;
-    settingValues(flag_num, values);
+
+    [inp, inp2].forEach(function (element) {
+        element.addEventListener("input", function () {
+            let values = [formula.innerHTML, `½  x  ${inp.value}  x  ${inp2.value}`, 0.5 * inp.value * inp2.value];
+            let flag_num = 2;
+            settingValues(flag_num, values);            
+        });
+    });
+
 }
 
+shape_name[3].onclick = () => {
+    changeIncommon();
+    img_change.src = "images/circle-area-images-removebg-preview.png";
+    img_change.setAttribute('width', '250px');
+    inp.placeholder = "Enter the radius";
+    shape_title.innerText = 'Circle';
+    formula.innerHTML = `πr<sup style="font-size: 17px;">2</sup>`;
+    inp2.style.display = 'none';
+    inp3.style.display = 'none';
+    [inp, inp2].forEach(function (element) {
+        element.addEventListener("input", function () {
+            let values = [formula.innerHTML, `π x ${inp.value}<sup style="font-size: 17px;">2</sup>`, 22 / 7 * (inp.value * inp.value)];
+            let flag_num = 1;
+            settingValues(flag_num, values);
+        }); 
+    });
+}
 
-/*
-    inp.onclick = function hide_inp() {
-        show_sol.style.display = 'none';
-        formula.innerHTML = 'a' + '<sup style="font-size: 17px;">2</sup>';
-    }
+// shape_name[4].onclick = () => {
+//     changeIncommon();
+//     img_change.src = "images/para-area-images-removebg-preview.png";
+//     img_change.setAttribute('width', '250px');
+//     inp.placeholder = "Enter the base";
+//     inp2.placeholder = "Enter the height";
+//     shape_title.innerText = 'Parallelogram';
+//     formula.innerHTML = `B x H`;
+//     inp3.style.display = 'none';
+//     [inp, inp2].forEach(function (element) {
+//         element.addEventListener("input", function () {
+//            let values = [formula.innerHTML]
+//         });
+//     });
 
-    done.onclick = function sub() {
-        let val = document.getElementById('input_num').value;
-        let val2 = document.getElementById('input_num_2').value;
-        let val3 = document.getElementById('input_num_3').value = 4;
+// }
 
-        if (checkinput(val, val2, val3)) {
-            value.innerHTML = val + '<sup style="font-size: 17px;">2</sup>';
-            formula.innerText = val * val;
-            real_answer.innerText = val * val;
-            show_sol.style.display = 'block';
-        }
-    }
-
-    function checkinput(n, n2, n3) {
-        console.log(n + 'not working');
-        if (n == '' || n2 == '' || n3 == '' || isNaN(n) || isNaN(n2) || isNaN(n3)) {
-            showSnackbar("Invalid input");
-            let flag = false;
-            return flag;
-        }
-        else {
-            flag = true;
-            return flag;
-        }
-    }
-*/
