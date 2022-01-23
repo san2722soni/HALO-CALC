@@ -16,7 +16,6 @@ let lastOperation = '';
 let haveDot = false;
 
 
-
 //displaying output and checking if the '.' appears more than one time .
 numbersEl.forEach(number => {
     number.addEventListener('click', (e) => {
@@ -38,12 +37,10 @@ operationEl.forEach(operation => {
         if (!dis2Num) return;
         haveDot = false;
         const operationName = e.target.innerText;
-        if (dis2Num && dis1Num && lastOperation) {
-            mathOperation();
-        }
-        else {
-            result = parseFloat(dis2Num);// To get number in float form to prevent + , or any operation sign to come as output
-        }
+
+        if (dis2Num && dis1Num && lastOperation) mathOperation();
+        else result = parseFloat(dis2Num);// To get number in float form to prevent + , or any operation sign to come as output
+        
         clearVar(operationName);
         lastOperation = operationName;
 
@@ -53,7 +50,7 @@ operationEl.forEach(operation => {
 
 // Making clearvar function to push current number after operation to display 1 i.e (to history) and clear the display 2 i.e (main output section) .
 function clearVar(name = '') {
-    dis1Num = dis1Num + dis2Num + ' ' + name + ' ';
+    dis1Num = `${dis1Num}${dis2Num} ${name} `;
     display1El.innerText = dis1Num;
     display2El.innerText = '';
     dis2Num = '';
@@ -63,23 +60,19 @@ function clearVar(name = '') {
 
 //Evaluating the value of history to temp result
 function mathOperation() {
-    if (lastOperation === 'x') {
-        result = parseFloat(result) * parseFloat(dis2Num);
-    }
-    else if (lastOperation === '+') {
-        result = parseFloat(result) + parseFloat(dis2Num);
-    }
-    else if (lastOperation === '-') {
-        result = parseFloat(result) - parseFloat(dis2Num);
-    }
-    else if (lastOperation === '/') {
-        result = parseFloat(result) / parseFloat(dis2Num);
-    }
-    else if (lastOperation === '%') {
-        result = parseFloat(result) % parseFloat(dis2Num);
+    switch(lastOperation) {
+        case "x":
+            result = parseFloat(result) * parseFloat(dis2Num);
+        case "+":
+            result = parseFloat(result) + parseFloat(dis2Num); 
+        case "-":
+            result = parseFloat(result) - parseFloat(dis2Num); 
+        case "/":
+            result = parseFloat(result) / parseFloat(dis2Num); 
+        case "%":
+            result = parseFloat(result) % parseFloat(dis2Num); 
     }
 }
-
 
 // adding event for equall button 
 equallEl.addEventListener('click', (e) => {
@@ -154,14 +147,9 @@ function clickOperation(key) {
     });
 }
 
-function clickEqual() {
-    equallEl.click();
-}
+const clickEqual = () => equallEl.click();
 
-function clickBackspace() {
-    clearlastEl.click();
-}
-
+const clickBackspace = () => clearlastEl.click();
 
 let selected = document.querySelectorAll('.select');
 let check = document.querySelectorAll('.check');
@@ -180,12 +168,8 @@ function hide() {
 
 function ageCalculate() {
 
-    if (inpDate.value == '') {
-        alert("No input ! ");
-    }
-    else {
-        appear.style.display = "flex";
-    }
+    if (inpDate.value == '') alert("No input ! ");
+    else appear.style.display = "flex";
 
     let today = new Date();
     let inputDate = new Date(document.getElementById("date_input").value);
@@ -247,8 +231,7 @@ function displayResult(Bdate, Bmonth, Byear) {
 function leapChecker(year) {
     if (year % 4 == 0 || (year % 100 == 0 && year % 400 == 0)) {
         months[1] = 29;
-    }
-    else {
+    } else {
         months[1] = 28;
     }
 
@@ -273,7 +256,7 @@ function showSnackbar(value) {
 
 // Enter Value section of AREA calc -------------------------
 
-let calc_type = document.getElementById('type_of_calculation');
+let calcType = document.getElementById('type_of_calculation');
 let shape_title = document.getElementById('shape_title');
 let real_answer = document.getElementById('real_answer');
 let done = document.getElementById('done');
@@ -292,12 +275,12 @@ show_sol.style.display = 'none';
 
 function settingValues(flag_num, arr) {
 
-    inp.onclick = function hide_inp() {
+    inp.onclick = () => {
         show_sol.style.display = 'none';
         formula.innerHTML = arr[0];
     }
 
-    done.onclick = function sub() {
+    done.onclick = () => {
 
         if (flag_num == 1) {
             inp2.value = 2;
@@ -344,12 +327,12 @@ function settingValues(flag_num, arr) {
 
 //getting all id's of the shapes . 
 let shapeIds = ["s0" , "s1" , "s2" , "s3" , "s4" , "s5" , "s6" , "s7"];
-let shape_name = [];
+let shapeName = [];
 shapeIds.forEach(function (shape) {
     shape = document.getElementById(shape);
     // console.log(shape);
-    shape_name.push(shape);
-    // console.log(shape_name);
+    shapeName.push(shape);
+    // console.log(shapeName);
 });
 
 let shapes = document.getElementById('s');
@@ -381,7 +364,7 @@ function changeIncommon() {
     formula.innerHTML = ' ';
 }
 
-shape_name[0].onclick = () => {
+shapeName[0].onclick = () => {
     changeIncommon();
     img_change.src = "images/Square-perimeter-removebg-preview.png";
     inp.placeholder = "Enter the Side";
@@ -395,7 +378,7 @@ shape_name[0].onclick = () => {
     }
 }
 
-shape_name[1].onclick = () => {
+shapeName[1].onclick = () => {
     changeIncommon();
     img_change.src = "images/rectangle_perimeter-removebg-preview.png";
     inp2.placeholder = "Enter the breadth";
@@ -415,7 +398,7 @@ shape_name[1].onclick = () => {
 
 }
 
-shape_name[2].onclick = () => {
+shapeName[2].onclick = () => {
     changeIncommon();
     img_change.src = "images/triangle-images-removebg-preview.png";
     img_change.setAttribute('width', '250px');
@@ -436,7 +419,7 @@ shape_name[2].onclick = () => {
 
 }
 
-shape_name[3].onclick = () => {
+shapeName[3].onclick = () => {
     changeIncommon();
     img_change.src = "images/circle-area-images-removebg-preview.png";
     img_change.setAttribute('width', '250px');
@@ -454,7 +437,7 @@ shape_name[3].onclick = () => {
     });
 }
 
-// shape_name[4].onclick = () => {
+// shapeName[4].onclick = () => {
 //     changeIncommon();
 //     img_change.src = "images/para-area-images-removebg-preview.png";
 //     img_change.setAttribute('width', '250px');
