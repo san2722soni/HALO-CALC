@@ -17,6 +17,10 @@ html,body{
     font-family: sans-serif;
 }
 
+*, *::after, ::before {
+    -webkit-tap-highlight-color: transparent;
+}
+
 :root{
     --primary-bg-color : #3b3c40;
     --secondary-bg-color: #e3635b;
@@ -63,9 +67,10 @@ input[type=number]::-webkit-inner-spin-button {
 
 .calc-container{
     max-width: 90%;
-    width: 70%;
+    width: clamp(70%, 80%, 100%);
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-image: linear-gradient(to right , #383b41, #303338 , #232629 
     , #232527 , #1f2125);
     padding: 2%;
@@ -73,18 +78,40 @@ input[type=number]::-webkit-inner-spin-button {
     box-shadow: 
     inset 0 -3em 3em rgba(0,0,0,0.1), 
     0.5em 0.5em 2em #171a1c;
-    height: 86vh;
+    height: fit-content;
+}
+
+@media screen and (max-width: 1060px) {
+    .calc-container {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 1060px) {
+    .calc-options {
+        margin: 2em 0;
+    }
+
+    .calc-options .select {
+        width: 4em;
+        height: 4em;
+    }
 }
 
   .calc-container .calc{ 
     flex-basis: 27%;
     min-width: 300px;
+    height: 550px !important;
     display: none;
     flex-direction: column;
     justify-content: space-between;
     background-color: #1c1e22;
     padding: 1% 1.5%;
     border-radius: 6px;
+    overflow-y: scroll;
+}
+
+.navigate {
+    margin-top: 3em;
 }
 
 /* calc , output section  starts */
@@ -217,7 +244,7 @@ input[type=number]::-webkit-inner-spin-button {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 30%;
+    height: 500px;
 }
 
 .AGE .input_age .date_age input{
@@ -318,7 +345,10 @@ input[type=number]::-webkit-inner-spin-button {
 /* <!-- AGE calc div ends --> */
 
 /* <!---------------- AREA calc div starts ----------------> */
-
+.shape-container {
+    padding: 1em;
+    overflow-y: scroll;
+}
 .AREA{
     /* display: grid !important; */
     justify-content: space-evenly !important;
@@ -456,6 +486,7 @@ input[type=number]::-webkit-inner-spin-button {
     grid-template-rows: repeat(2 , 110px) 70px 40px;
     grid-template-columns: repeat(1 , 1fr);
     align-items: center;
+    height: 500px;
 }
 
 .BMI .bmiInput .bmiHeading{
@@ -511,17 +542,19 @@ input[type=number]::-webkit-inner-spin-button {
 
 .calc-container .calc-type .type-heading{
     color: #dee1e7;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-    font-size: 13px;
+    letter-spacing: 0.2em;
+    word-spacing: 0.2em;
+    font-size: 0.8em;
     font-style: normal;
+    margin: 2em 2em;
 }
 
 .calc-container .calc-type .calc-options{
     display: grid;
     grid-template-rows: repeat(2 , 100px);
-    grid-template-columns: repeat(5 , 100px);
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-gap: 1.5em;
+    justify-content: center;
 }
 
 .calc-options .select{
@@ -534,6 +567,9 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.5s;
+
+    width: 6em;
+    height: 6em;
 }
 
 .calc-options .select:hover{
@@ -595,7 +631,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .select .option .fas,.far{
     color: #7f828d;
-    font-size: 40px;
+    font-size: 2em;
     margin-bottom: 18px;
 }
 
@@ -624,10 +660,13 @@ input[type=number]::-webkit-inner-spin-button {
     align-items: center;
     font-style: normal;
     color: #dee1e7;
+    margin: 2em 0;
 }
 
 .calc-show h2{
     letter-spacing: 2px;
+    font-size: 1.3em;
+    margin: 1em;
 }
 
 .calc-show h3{

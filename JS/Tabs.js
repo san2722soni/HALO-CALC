@@ -28,7 +28,7 @@ function onTabClick(event) {
 
     event.target.classList.add('active')
     leftContent.classList.add('active-content')
-    calctype.innerText = `The Calc you are using: ${capitalise(event.target.classList[1])}`
+    calctype.innerText = `The calc you are using: ${capitalise(event.target.classList[1])}`
 }
 
 const options = document.querySelector('.calc-options')
