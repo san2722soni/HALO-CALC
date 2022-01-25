@@ -460,7 +460,7 @@ shape_name[3].onclick = () => {
     inp3.style.display = 'none';
     [inp, inp2].forEach(function (element) {
         element.addEventListener("input", function () {
-            let values = [formula.innerHTML, `π x ${inp.value}<sup style="font-size: 17px;">2</sup>`, Math.floor(22 / 7 * (inp.value * inp.value))];
+            let values = [formula.innerHTML, `π x ${inp.value}<sup style="font-size: 17px;">2</sup>`, (22 / 7 * (inp.value * inp.value)).toFixed(2)];
             let flag_num = 1;
             // checkEnterButton(values[2]);
             settingValues(flag_num, values);
@@ -527,7 +527,7 @@ shape_name[6].onclick = () => {
     formula.innerHTML = `π (R<sup style="font-size: 17px;">2</sup> - r<sup style="font-size: 17px;">2</sup>)`;
     [inp, inp2].forEach(function (element) {
         element.addEventListener("input", function () {
-            let values = [formula.innerHTML, `π (${inp.value}<sup style="font-size: 13px;">2</sup> - ${inp2.value}<sup style="font-size: 13px;">2</sup>)`, Math.floor(22/7 * (Math.pow(inp.value, 2) - Math.pow(inp2.value, 2)))];
+            let values = [formula.innerHTML, `π (${inp.value}<sup style="font-size: 13px;">2</sup> - ${inp2.value}<sup style="font-size: 13px;">2</sup>)`, (22/7 * (Math.pow(inp.value, 2) - Math.pow(inp2.value, 2))).toFixed(3)];
             let flag_num = 2;
             // checkEnterButton(values[2]);
             settingValues(flag_num, values);
@@ -548,7 +548,7 @@ shape_name[7].onclick = () => {
     formula.innerHTML = "π x a x b";
     [inp, inp2].forEach(function (element) {
         element.addEventListener("input", function () {
-            let values = [formula.innerHTML, `π x ${inp.value} x ${inp2.value}`, Math.floor(22/7 * inp.value * inp2.value)];
+            let values = [formula.innerHTML, `π x ${inp.value} x ${inp2.value}`, (22/7 * inp.value * inp2.value).toFixed(2)];
             let flag_num = 2;
             // checkEnterButton(values[2]);
             settingValues(flag_num, values);
