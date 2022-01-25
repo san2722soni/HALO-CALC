@@ -47,6 +47,14 @@ body{
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none; /* Mozilla */
+  margin: 0;
+}
+
 .active-content {
     display: flex !important;
 }
@@ -477,7 +485,7 @@ body{
 }
 
 .BMI .bmiInput #bmiResult{
-    display: none;
+    /* display: none; */
     font-size: 20px;
     color: #fff;
     text-align: center;

@@ -65,7 +65,7 @@
 
 		<!-- AGE calc div starts -->
 
-		<div class="calc AGE active-content">
+		<div class="calc AGE">
 
 			<div class="input_age">
 				<div class="date_age">
@@ -200,14 +200,14 @@
 			<div class="bmiInput">
 				<div>
 					<h1 class="bmiHeading">Height</h1>
-					<input type="text" name="bmiHeight" class="bmiField" id="bmiHeight" placeholder="Enter your height">
+					<input type="number" name="bmiHeight" class="bmiField" id="bmiHeight" placeholder="Enter your height">
 				</div>
 				<div>
 					<h1 class="bmiHeading">Weight</h1>
-					<input type="text" name="bmiWeight" class="bmiField" id="bmiWeight" placeholder="Enter your weight">
+					<input type="number" name="bmiWeight" class="bmiField" id="bmiWeight" placeholder="Enter your weight">
 				</div>
 				<div>
-					<h2 id="bmiResult">hello</h2>
+					<h2 id="bmiResult">Enter values to see the result.</h2>
 				</div>
 				<div>
 					<marquee behavior="scroll" direction="left" scrollamount="5" width="100%" class="bmiInfo">
@@ -221,14 +221,14 @@
 
 		<div class="calc-type">
 			<div class="type-heading">
-				<h1>Choose the type of calculator you want to use </h1>
+				<h1 >Choose the type of calculator you want to use </h1>
 			</div>
 
 			<div class="calc-options">
 
 				<!-- --------------------------------- -->
-				<div class="select active age">
-					<input type="checkbox" class="check">
+				<div class="select age">
+
 
 					<div class="option">
 						<i class="fas fa-birthday-cake white"></i>
@@ -237,7 +237,7 @@
 				</div>
 
 				<div class="select area">
-					<input type="checkbox" class="check">
+
 
 					<div class="option" id="1">
 						<i class="fas fa-arrows-alt-v white"></i>
@@ -246,7 +246,7 @@
 				</div>
 
 				<div class="select bmi">
-					<input type="checkbox" class="check">
+
 
 					<div class="option">
 						<i class="fas fa-weight"></i>
@@ -255,7 +255,7 @@
 				</div>
 
 				<div class="select data">
-					<input type="checkbox" class="check">
+
 
 					<div class="option">
 						<i class="fas fa-exchange-alt"></i>
@@ -265,7 +265,7 @@
 
 				<!-- ------------------------------ -->
 				<div class="select">
-					<input type="checkbox" class="check">
+
 
 					<div class="option">
 						<i class="far fa-calendar-alt"></i>
@@ -274,7 +274,7 @@
 				</div>
 
 				<div class="select">
-					<input type="checkbox" class="check">
+
 
 					<div class="option">
 						<i class="fas fa-ruler-horizontal"></i>
@@ -283,7 +283,7 @@
 				</div>
 
 				<div class="select">
-					<input type="checkbox" class="check">
+
 
 					<div class="option">
 						<i class="fas fa-weight-hanging"></i>
@@ -294,7 +294,7 @@
 				<!-- ------------------------------ -->
 
 				<div class="select">
-					<input type="checkbox" class="check">
+
 
 					<div class="option">
 						<i class="fas fa-tachometer-alt"></i>
@@ -303,7 +303,7 @@
 				</div>
 
 				<div class="select">
-					<input type="checkbox" class="check">
+
 
 					<div class="option">
 						<i class="fas fa-thermometer-three-quarters"></i>
@@ -312,7 +312,7 @@
 				</div>
 
 				<div class="select">
-					<input type="checkbox" class="check">
+
 
 					<div class="option">
 						<i class="far fa-clock"></i>
@@ -324,7 +324,7 @@
 			</div>
 
 			<div class="calc-show">
-				<h2>The calc you are using</h2>
+				<h2 id="calc-type">The calc you are using: Age</h2>
 				<h3><span>1</span> - <span>Age</span></h3>
 			</div>
 
