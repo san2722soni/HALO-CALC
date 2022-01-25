@@ -274,7 +274,7 @@ function showSnackbar(value) {
 // Enter Value section of AREA calc -------------------------
 
 let calc_type = document.getElementById('type_of_calculation');
-let shape_title = document.getElementById('shape_title');
+let shapeTitle = document.getElementById('shapeTitle');
 let real_answer = document.getElementById('real_answer');
 let done = document.getElementById('done');
 let formula = document.getElementById('formula');
@@ -286,7 +286,7 @@ let inp3 = document.getElementById('input_num_3');
 let img_change = document.getElementById('img_change');
 let here2 = document.getElementById('here2');
 let input_fields = document.querySelectorAll('.input_fields');
-let ransom = document.getElementById('random');
+let random = document.getElementById('random');
 
 show_sol.style.display = 'none';
 
@@ -342,14 +342,13 @@ function settingValues(flag_num, arr) {
 
 //------changing the tabs accoring to the shape choosed
 
-//getting all id's of the shapes . 
-let shapeIds = ["s0" , "s1" , "s2" , "s3" , "s4" , "s5" , "s6" , "s7"];
+//getting all id's of the shapes .
+
+let shapeIds = ["s0", "s1", "s2", "s3", "s4", "s5", "s6", "s7"];
 let shape_name = [];
 shapeIds.forEach(function (shape) {
     shape = document.getElementById(shape);
-    // console.log(shape);
     shape_name.push(shape);
-    // console.log(shape_name);
 });
 
 let shapes = document.getElementById('s');
@@ -358,6 +357,17 @@ let Enter_values = document.getElementById('eN');
 let main_menu = document.getElementById('main_menu');
 let question = document.getElementById('question');
 
+
+function checkEnterButton(arrElem) {
+    [inp, inp2, inp3].forEach(function (element) {
+        element.addEventListener("keypress", event => {
+            if (event.key == 13) {
+                event.preventDefault();
+                console.log(arrElem); 
+            }
+        });
+    });
+}
 
 //returning to main menu function
 main_menu.onclick = function main_menu() {
@@ -400,7 +410,7 @@ shape_name[1].onclick = () => {
     img_change.src = "images/rectangle_perimeter-removebg-preview.png";
     inp2.placeholder = "Enter the breadth";
     inp.placeholder = "Enter the length";
-    shape_title.innerText = 'Rectangle';
+    shapeTitle.innerText = 'Rectangle';
     formula.innerHTML = 'L x B';
     inp2.style.display = 'inline-block';
     inp3.style.display = 'none';
@@ -409,7 +419,8 @@ shape_name[1].onclick = () => {
         element.addEventListener("input", function () {
             let values = [`L x B`, `${inp.value} x ${inp2.value}`, `${inp.value * inp2.value}`];
             let flag_num = 2;
-            settingValues(flag_num, values);           
+            // checkEnterButton(values[2]);
+            settingValues(flag_num, values);
         });
     });
 
@@ -421,7 +432,7 @@ shape_name[2].onclick = () => {
     img_change.setAttribute('width', '250px');
     inp.placeholder = "Enter the base";
     inp2.placeholder = "Enter the height";
-    shape_title.innerText = 'Triangle';
+    shapeTitle.innerText = 'Triangle';
     formula.innerHTML = `½ <span style="position: relative; font-size: 20px;" >x b x h</span>`;
     inp2.style.display = 'inline';
     inp3.style.display = 'none';
@@ -430,7 +441,8 @@ shape_name[2].onclick = () => {
         element.addEventListener("input", function () {
             let values = [formula.innerHTML, `½  x  ${inp.value}  x  ${inp2.value}`, 0.5 * inp.value * inp2.value];
             let flag_num = 2;
-            settingValues(flag_num, values);            
+            // checkEnterButton(values[2]);
+            settingValues(flag_num, values);
         });
     });
 
@@ -441,33 +453,106 @@ shape_name[3].onclick = () => {
     img_change.src = "images/circle-area-images-removebg-preview.png";
     img_change.setAttribute('width', '250px');
     inp.placeholder = "Enter the radius";
-    shape_title.innerText = 'Circle';
+    shapeTitle.innerText = 'Circle';
     formula.innerHTML = `πr<sup style="font-size: 17px;">2</sup>`;
+    random.innerText = "Solve for Area (taking π = 22/7)";
     inp2.style.display = 'none';
     inp3.style.display = 'none';
     [inp, inp2].forEach(function (element) {
         element.addEventListener("input", function () {
-            let values = [formula.innerHTML, `π x ${inp.value}<sup style="font-size: 17px;">2</sup>`, 22 / 7 * (inp.value * inp.value)];
+            let values = [formula.innerHTML, `π x ${inp.value}<sup style="font-size: 17px;">2</sup>`, Math.floor(22 / 7 * (inp.value * inp.value))];
             let flag_num = 1;
+            // checkEnterButton(values[2]);
             settingValues(flag_num, values);
-        }); 
+        });
     });
 }
 
-// shape_name[4].onclick = () => {
-//     changeIncommon();
-//     img_change.src = "images/para-area-images-removebg-preview.png";
-//     img_change.setAttribute('width', '250px');
-//     inp.placeholder = "Enter the base";
-//     inp2.placeholder = "Enter the height";
-//     shape_title.innerText = 'Parallelogram';
-//     formula.innerHTML = `B x H`;
-//     inp3.style.display = 'none';
-//     [inp, inp2].forEach(function (element) {
-//         element.addEventListener("input", function () {
-//            let values = [formula.innerHTML]
-//         });
-//     });
+shape_name[4].onclick = () => {
+    changeIncommon();
+    img_change.src = "images/para-area-images-removebg-preview.png";
+    img_change.setAttribute('width', '250px');
+    inp.placeholder = "Enter the base";
+    inp2.placeholder = "Enter the height";
+    shapeTitle.innerText = 'Parallelogram';
+    formula.innerHTML = `B x H`;
+    inp3.style.display = 'none';
+    inp2.style.display = 'inline-block';
+    [inp, inp2].forEach(function (element) {
+        element.addEventListener("input", function () {
+            let values = [formula.innerHTML, ` ${inp.value} x ${inp2.value} `, inp.value * inp2.value];
+            let flag_num = 2;
+            // checkEnterButton(values[2]);
+            settingValues(flag_num, values);
+        });
+    });
 
-// }
+}
+
+shape_name[5].onclick = () => {
+    changeIncommon();
+    img_change.src = "images/trap-area-images-removebg-preview.png";
+    inp.placeholder = "Enter the 1-base";
+    inp2.placeholder = "Enter the 2-base";
+    inp3.placeholder = "Enter the height";
+    inp3.style.display = 'inline-block';
+    here2.style.fontSize = `${17}px`;
+    value.style.fontSize = `${17}px`;
+    real_answer.style.fontSize = `${17}px`;
+    shapeTitle.innerText = "Trapezium";
+    formula.innerHTML = `(a + b)/ 2 * h`;
+    [inp, inp2 , inp3].forEach(function (element) {
+        element.addEventListener("input", function () {
+            let values = [formula.innerHTML, ` ( ${inp.value} + ${inp2.value} )/ 2 * ${inp3.value}`, (inp.value * inp2.value)/ 2 * inp3.value];
+            let flag_num = 3;
+            // checkEnterButton(values[2]);
+            settingValues(flag_num, values);
+        });
+    });
+}
+
+shape_name[6].onclick = () => {
+    changeIncommon();
+    img_change.src = "images/an-area-image-removebg-preview.png";
+    img_change.setAttribute('width', '250px');
+    inp.placeholder = "Enter the Outer radius";
+    inp2.placeholder = "Enter the inner radius";
+    random.innerText = "Solve for Area (taking π = 22/7)";
+    inp2.style.display = 'inline-block';
+    inp3.style.display = 'none';
+    here2.style.fontSize = `${17}px`;
+    value.style.fontSize = `${17}px`;
+    real_answer.style.fontSize = `${17}px`;
+    shapeTitle.innerText = "Annulus";
+    formula.innerHTML = `π (R<sup style="font-size: 17px;">2</sup> - r<sup style="font-size: 17px;">2</sup>)`;
+    [inp, inp2].forEach(function (element) {
+        element.addEventListener("input", function () {
+            let values = [formula.innerHTML, `π (${inp.value}<sup style="font-size: 13px;">2</sup> - ${inp2.value}<sup style="font-size: 13px;">2</sup>)`, Math.floor(22/7 * (Math.pow(inp.value, 2) - Math.pow(inp2.value, 2)))];
+            let flag_num = 2;
+            // checkEnterButton(values[2]);
+            settingValues(flag_num, values);
+        });
+    });
+}
+
+
+shape_name[7].onclick = () => {
+    changeIncommon();
+    img_change.src = "images/ellipse (1).png";
+    img_change.setAttribute('width', '250px');
+    inp.placeholder = "Enter the x-axis";
+    inp2.placeholder = "Enter the y-axis";
+    random.innerText = "Solve for Area (taking π = 22/7)";
+    inp3.style.display = "none";
+    shapeTitle.innerText = "Ellipse";
+    formula.innerHTML = "π x a x b";
+    [inp, inp2].forEach(function (element) {
+        element.addEventListener("input", function () {
+            let values = [formula.innerHTML, `π x ${inp.value} x ${inp2.value}`, Math.floor(22/7 * inp.value * inp2.value)];
+            let flag_num = 2;
+            // checkEnterButton(values[2]);
+            settingValues(flag_num, values);
+        });
+    });
+}
 
