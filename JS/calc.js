@@ -274,7 +274,7 @@ function showSnackbar(value) {
 // Enter Value section of AREA calc -------------------------
 
 let calc_type = document.getElementById('type_of_calculation');
-let shapeTitle = document.getElementById('shapeTitle');
+let shapeTitle = document.getElementById('shape_title');
 let real_answer = document.getElementById('real_answer');
 let done = document.getElementById('done');
 let formula = document.getElementById('formula');
@@ -499,7 +499,7 @@ shape_name[5].onclick = () => {
     here2.style.fontSize = `${17}px`;
     value.style.fontSize = `${17}px`;
     real_answer.style.fontSize = `${17}px`;
-    shapeTitle.innerText = "Trapezium";
+    shapeTitle.innerText = 'Trapezium';
     formula.innerHTML = `(a + b)/ 2 * h`;
     [inp, inp2 , inp3].forEach(function (element) {
         element.addEventListener("input", function () {
