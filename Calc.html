@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/8b6dce546d.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap"
@@ -148,40 +149,40 @@
 				</div>
 			</div>
 
-				<div class="s_img" id="simg">
-					<img src="images/Square-perimeter-removebg-preview.png" id="img_change" alt="square">
+			<div class="s_img" id="simg">
+				<img src="images/Square-perimeter-removebg-preview.png" id="img_change" alt="square">
+			</div>
+			<div class="Enter_values" id="eN">
+				<h1 id="shape_title">Square</h1>
+				<h4 style="color:#fff;" id="random">
+					Solve for Area
+				</h4>
+				<div>
+					<h1 style="color: #fff;">A = <span id="formula">a<sup style="font-size: 17px;">2</sup></span></h1>
 				</div>
-				<div class="Enter_values" id="eN">
-					<h1 id="shape_title">Square</h1>
-					<h4 style="color:#fff;" id="random">
-						Solve for Area
-					</h4>
-					<div>
-						<h1 style="color: #fff;">A = <span id="formula">a<sup style="font-size: 17px;">2</sup></span></h1>
+				<div class="enter_value">
+					<div style="display: flex; justify-content: space-between; flex-direction: column;">
+						<input type="text" id="input_num" placeholder="Enter Value" class="input_fields">
+						<input type="text" id="input_num_2" placeholder="Enter value breath" class="input_fields">
+						<input type="text" id="input_num_3" placeholder="Enter value idk" class="input_fields">
 					</div>
-					<div class="enter_value">
-						<div style="display: flex; justify-content: space-between; flex-direction: column;">
-							<input type="text" id="input_num" placeholder="Enter Value" class="input_fields">
-							<input type="text" id="input_num_2" placeholder="Enter value breath" class="input_fields">
-							<input type="text" id="input_num_3" placeholder="Enter value idk" class="input_fields">
-						</div>
-						<button id="done">GO!</button>
-						<style>
-							#done {
-								padding: 7px 15px;
-								background: #ffff;
-								border: none;
-								font-size: 16px;
-							}
-						</style>
-					</div>
-					<div id="show_sol">
-						<h1>Solution</h1>
-						<h2>
-							<span id="here1">A</span> = <span id="here2">a<sup style="font-size: 17px;">2</sup></span> =
-							<span id="value">5</span> = <span id="real_answer"></span>
-						</h2>
-					</div>
+					<button id="done">GO!</button>
+					<style>
+						#done {
+							padding: 7px 15px;
+							background: #ffff;
+							border: none;
+							font-size: 16px;
+						}
+					</style>
+				</div>
+				<div id="show_sol">
+					<h1>Solution</h1>
+					<h2>
+						<span id="here1">A</span> = <span id="here2">a<sup style="font-size: 17px;">2</sup></span> =
+						<span id="value">5</span> = <span id="real_answer"></span>
+					</h2>
+				</div>
 			</div>
 		</div>
 
@@ -191,32 +192,101 @@
 		<!-- BMI calc div starts -->
 
 		<div class="calc BMI 3">
+			<div class="container">
+				<div class="row">
+					<input type="range" min="20" max="200" value="20" id="weight" oninput="calculate()">
+					<span id="weight-val">20 kg</span>
+				</div>
+				<div class="row">
+					<input type="range" min="100" max="250" value="100" id="height" oninput="calculate()">
+					<span id="height-val">100 cm</span>
+				</div>
 
-			<div class="bmiInput">
-				<div>
-					<h1 class="bmiHeading">Height</h1>
-					<input type="number" name="bmiHeight" class="bmiField" id="bmiHeight" placeholder="Enter your height">
-				</div>
-				<div>
-					<h1 class="bmiHeading">Weight</h1>
-					<input type="number" name="bmiWeight" class="bmiField" id="bmiWeight" placeholder="Enter your weight">
-				</div>
-				<div>
-					<h2 id="bmiResult">Enter values to see the result.</h2>
-				</div>
-				<div>
-					<marquee behavior="scroll" direction="left" scrollamount="5" width="100%" class="bmiInfo">
-						Note : Enter the Height in [cm] and Weight in [kg] .
-					</marquee>
-				</div>
+				<p id="result">20.0</p>
+				<p id="category">Normal weight</p>
 			</div>
 		</div>
 
 		<!-- BMI calc div ends -->
 
+		<!-- Length calc div starts -->
+
+		<div class="calc LENGTH 6">
+			<div class="navigate">
+				<i class="fa-solid fa-circle-info"
+					onclick="showSnackbar('Input in any one field , and see results automatically !!')"></i>
+				<i class="fa-solid fa-circle-question"
+					onclick="showSnackbar('Length Converter , Enter values to see measurements')"></i>
+			</div>
+			<div class="lengthInputs">
+				<div class="lengthInput">
+					<label>Feet</label>
+					<input type="number" id="inputFeet" oninput="lengthConverter(this.id,this.value) "
+						onchange="lengthConverter(this.id,this.value)" placeholder="Feet">
+				</div>
+				<div class="lengthInput">
+					<label>Meters</label>
+					<input type="number" id="inputMeters" oninput="lengthConverter(this.id,this.value) "
+						onchange="lengthConverter(this.id,this.value)" placeholder="Meters">
+				</div>
+				<div class="lengthInput">
+					<label>Inches</label>
+					<input type="number" id="inputInches" oninput="lengthConverter(this.id,this.value) "
+						onchange="lengthConverter(this.id,this.value)" placeholder="Inches">
+				</div>
+				<div class="lengthInput">
+					<label>Centimeters</label>
+					<input type="number" id="inputCm" oninput="lengthConverter(this.id,this.value) "
+						onchange="lengthConverter(this.id,this.value)" placeholder="Cm">
+				</div>
+				<div class="lengthInput">
+					<label>Yards</label>
+					<input type="number" id="inputYards" oninput="lengthConverter(this.id,this.value) "
+						onchange="lengthConverter(this.id,this.value)" placeholder="Yards">
+				</div>
+				<div class="lengthInput">
+					<label>Kilometers</label>
+					<input type="number" id="inputKm" oninput="lengthConverter(this.id,this.value) "
+						onchange="lengthConverter(this.id,this,value)" placeholder="Km">
+				</div>
+				<div class="lengthInput">
+					<label>Miles</label>
+					<input type="number" id="inputMiles" oninput="lengthConverter(this.id,this.value) "
+						onchange="lengthConverter(this.id,this.value)" placeholder="Miles">
+				</div>
+			</div>
+		</div>
+
+		<!-- Length calc div ends -->
+
+		<!-- Temprature calc div ends -->
+
+		<dic class="calc TEMPRATURE 9">	
+			<div class="tempInputs">
+				<input type="number" id="Cel" placeholder="Cel" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+
+				<input type="number" id="Fah" placeholder="Fah" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+
+				<input type="number" id="Kel" placeholder="Kel" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+				
+			</div>
+
+			<span id="tempIcon"></span>
+		</dic>
+
+		<!-- Temprature calc div ends -->
+
+		<!-- AlgebraSquare calc div ends -->
+			<div class="calc SQUARE 10">
+				<input type="range" name="range" id="rangeSquare" min="10" max="100" value="20" style="border-radius: 20px;">
+			</div>
+		<!-- AlgebraSquare calc div ends -->
+		
+
+
 		<div class="calc-type">
 			<div class="type-heading">
-				<h1 >Choose the type of calculator you want to use </h1>
+				<h1>Choose the type of calculator you want to use </h1>
 			</div>
 
 			<div class="calc-options">
@@ -259,17 +329,16 @@
 				</button>
 
 				<!-- ------------------------------ -->
-				<button class="select">
+				<button class="select energy">
 
 
 					<div class="option">
-						<i class="far fa-calendar-alt"></i>
-						<p>Date</p>
+						<i class="fa-solid fa-fire-flame-curved"></i>
+						<p>Energy</p>
 					</div>
 				</button>
 
-				<button class="select">
-
+				<button class="select Length">
 
 					<div class="option">
 						<i class="fas fa-ruler-horizontal"></i>
@@ -277,7 +346,7 @@
 					</div>
 				</button>
 
-				<button class="select">
+				<button class="select Mass">
 
 
 					<div class="option">
@@ -288,7 +357,7 @@
 
 				<!-- ------------------------------ -->
 
-				<button class="select">
+				<button class="select Speed">
 
 
 					<div class="option">
@@ -297,7 +366,7 @@
 					</div>
 				</button>
 
-				<button class="select">
+				<button class="select Temprature">
 
 
 					<div class="option">
@@ -306,12 +375,11 @@
 					</div>
 				</button>
 
-				<button class="select">
-
+				<button class="select Square">
 
 					<div class="option">
-						<i class="far fa-clock"></i>
-						<p>Time</p>
+						<i class="fa-solid fa-x" style="position: relative; top: 5px; left: 5px;"></i><sub style="font-size: 9px; position:  relative; top: -17px;left: 8px;"><i class="fa-solid fa-2"></i></sub>
+						<p>x²</p>
 					</div>
 				</button>
 
@@ -340,5 +408,7 @@
 <script src="JS/calc.js"></script>
 <script src="JS/Tabs.js"></script>
 <script src="JS/BMI.js"></script>
+<script src="JS/Length.js"></script>
+<script src="JS/Temp.js"></script>
 
 </html>
