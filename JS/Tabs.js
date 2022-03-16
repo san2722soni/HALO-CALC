@@ -32,9 +32,10 @@ function onTabClick(event) {
     calctype.innerText = `The calc you are using: ${capitalise(event.target.classList[1].toUpperCase())}`;
     calcTypeName.innerText = `${event.target.classList[1].toUpperCase()}`;
     calcTypeNum.innerText = parseInt(leftContent.classList[2]);
+    console.log(leftContent);
 }
 
 const options = document.querySelector('.calc-options');
 options.addEventListener('click', onTabClick, false);
 
-//Use semicolon idiot , yes saying you Itachi sir !
+

@@ -358,16 +358,16 @@ let main_menu = document.getElementById('main_menu');
 let question = document.getElementById('question');
 
 
-function checkEnterButton(arrElem) {
-    [inp, inp2, inp3].forEach(function (element) {
-        element.addEventListener("keypress", event => {
-            if (event.key == 13) {
-                event.preventDefault();
-                console.log(arrElem); 
-            }
-        });
-    });
-}
+// function checkEnterButton(arrElem) {
+//     [inp, inp2, inp3].forEach(function (element) {
+//         element.addEventListener("keypress", event => {
+//             if (event.key == 13) {
+//                 event.preventDefault();
+//                 console.log(arrElem); 
+//             }
+//         });
+//     });
+// }
 
 //returning to main menu function
 main_menu.onclick = function main_menu() {
