@@ -6,24 +6,30 @@ const inputFeet = document.getElementById('inputFeet'),
     inputCm = document.getElementById('inputCm'),
     inputKm = document.getElementById('inputKm');
 
-function lengthConverter(id, value) {
+function lengthConverter(id, val) {
+
+    const checkEmptyVal = (elem) => {
+        if (val === '') {
+            elem.value = '';
+        }
+    }
 
 
     let inputTypes = [inputFeet, inputMeters, inputInches, inputCm, inputYards, inputKm, inputMiles];
 
-    const FEET = [value / 3.2808, value * 12, value / 0.032808, value * 0.33333, value / 3280.8, value * 0.00018939];
+    const FEET = [val / 3.2808, val * 12, val / 0.032808, val * 0.33333, val / 3280.8, val * 0.00018939];
 
-    const METERS = [value * 3.2808, value * 39.370, value / 0.01, value * 1.0936, value / 1000, value * 0.00062137];
+    const METERS = [val * 3.2808, val * 39.370, val / 0.01, val * 1.0936, val / 1000, val * 0.00062137];
 
-    const INCHES = [value * 0.083333, value / 39.370, value / 0.39370, value * 0.027778, value / 39370, value * 0.000015783];
+    const INCHES = [val * 0.083333, val / 39.370, val / 0.39370, val * 0.027778, val / 39370, val * 0.000015783];
 
-    const CM = [value * 0.032808, value / 100, value * 0.39370, value * 0.010936, value / 100000, value * 0.0000062137];
+    const CM = [val * 0.032808, val / 100, val * 0.39370, val * 0.010936, val / 100000, val * 0.0000062137];
 
-    const YARDS = [value * 3, value / 1.0936, value * 36, value / 0.010936, value / 1093.6, value * 0.00056818];
+    const YARDS = [val * 3, val / 1.0936, val * 36, val / 0.010936, val / 1093.6, val * 0.00056818];
 
-    const KILOMETERS = [value * 3280.8, value * 1000, value * 39370, value * 100000, value * 1093.6, value * 0.62137];
+    const KILOMETERS = [val * 3280.8, val * 1000, val * 39370, val * 100000, val * 1093.6, val * 0.62137];
 
-    const MILES = [value * 5280, value / 0.00062137, value * 63360, value / 0.0000062137, value * 1760, value / 0.62137];
+    const MILES = [val * 5280, val / 0.00062137, val * 63360, val / 0.0000062137, val * 1760, val / 0.62137];
 
     switch (id) {
 
@@ -38,6 +44,7 @@ function lengthConverter(id, value) {
                 if (elem == inputKm || inputMiles) {
                     elem.value = FEET[index].toFixed(5);
                 }
+                checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
@@ -52,6 +59,7 @@ function lengthConverter(id, value) {
                 if (elem == inputKm || inputMiles) {
                     elem.value = METERS[index].toFixed(5);
                 }
+                checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
@@ -66,6 +74,7 @@ function lengthConverter(id, value) {
                 if (elem == inputKm || inputMiles) {
                     elem.value = INCHES[index].toFixed(5);
                 }
+                checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
@@ -80,6 +89,7 @@ function lengthConverter(id, value) {
                 if (elem == inputKm || inputMiles) {
                     elem.value = CM[index].toFixed(4);
                 }
+                checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
@@ -94,6 +104,7 @@ function lengthConverter(id, value) {
                 if (elem == inputKm || inputMiles) {
                     elem.value = YARDS[index].toFixed(4);
                 }
+                checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
@@ -108,6 +119,7 @@ function lengthConverter(id, value) {
                 if (elem == inputKm || inputMiles) {
                     elem.value = KILOMETERS[index].toFixed(2);
                 }
+                checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
@@ -119,20 +131,21 @@ function lengthConverter(id, value) {
 
             newInpType.forEach((elem, index) => {
                 elem.value = MILES[index].toFixed(2);
-                if (elem == inputKm || inputMiles) {
+                if (elem == inputKm) {
                     elem.value = MILES[index].toFixed(1);
                 }
+                checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
         default:
-            console.log("hello");
+            window.reload();
             break;
     }
 
 }
 
 //NISHIL WORK
-// make better and nice input feild in length calc
-//correctly round off all the value of input feild
-//if any of the feild is empty , then all will become empty
+// make better and nice input feild in length calc - DONE
+//correctly round off all the value of input field - DONE
+//if any of the feild is empty , then all will become empty - DONE

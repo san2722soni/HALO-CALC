@@ -168,7 +168,7 @@ let check = document.querySelectorAll('.check');
 
 
 // -------------------------------  NOW THE JS FOR AGE CALCULATOR 
-
+// NanDays error [23-01-2002] - TODO
 const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let appear = document.getElementById("appear");
 let inpDate = document.getElementById("date_input");

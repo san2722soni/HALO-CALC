@@ -222,27 +222,26 @@
 				<div class="lengthInput">
 					<label>Feet</label>
 					<input type="number" id="inputFeet" oninput="lengthConverter(this.id,this.value) "
-						onchange="lengthConverter(this.id,this.value)" placeholder="Feet">
+						placeholder="Feet">
 				</div>
 				<div class="lengthInput">
 					<label>Meters</label>
 					<input type="number" id="inputMeters" oninput="lengthConverter(this.id,this.value) "
-						onchange="lengthConverter(this.id,this.value)" placeholder="Meters">
+						placeholder="Meters">
 				</div>
 				<div class="lengthInput">
 					<label>Inches</label>
 					<input type="number" id="inputInches" oninput="lengthConverter(this.id,this.value) "
-						onchange="lengthConverter(this.id,this.value)" placeholder="Inches">
+						placeholder="Inches">
 				</div>
 				<div class="lengthInput">
 					<label>Centimeters</label>
-					<input type="number" id="inputCm" oninput="lengthConverter(this.id,this.value) "
-						onchange="lengthConverter(this.id,this.value)" placeholder="Cm">
+					<input type="number" id="inputCm" oninput="lengthConverter(this.id,this.value) " placeholder="Cm">
 				</div>
 				<div class="lengthInput">
 					<label>Yards</label>
 					<input type="number" id="inputYards" oninput="lengthConverter(this.id,this.value) "
-						onchange="lengthConverter(this.id,this.value)" placeholder="Yards">
+						placeholder="Yards">
 				</div>
 				<div class="lengthInput">
 					<label>Kilometers</label>
@@ -252,7 +251,7 @@
 				<div class="lengthInput">
 					<label>Miles</label>
 					<input type="number" id="inputMiles" oninput="lengthConverter(this.id,this.value) "
-						onchange="lengthConverter(this.id,this.value)" placeholder="Miles">
+						placeholder="Miles">
 				</div>
 			</div>
 		</div>
@@ -261,27 +260,31 @@
 
 		<!-- Temprature calc div ends -->
 
-		<dic class="calc TEMPRATURE 9">	
+		<div class="calc TEMPERATURE 9">
 			<div class="tempInputs">
-				<input type="number" id="Cel" placeholder="Cel" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+				<input type="number" id="Cel" placeholder="Cel" oninput="temperatureConverter(this.id,this.value)"
+					onchange="temperatureConverter(this.id,this.value)">
 
-				<input type="number" id="Fah" placeholder="Fah" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+				<input type="number" id="Fah" placeholder="Fah" oninput="temperatureConverter(this.id,this.value)"
+					onchange="temperatureConverter(this.id,this.value)">
 
-				<input type="number" id="Kel" placeholder="Kel" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
-				
+				<input type="number" id="Kel" placeholder="Kel" oninput="temperatureConverter(this.id,this.value)"
+					onchange="temperatureConverter(this.id,this.value)">
+
 			</div>
 
-			<span id="tempIcon"></span>
-		</dic>
+			<!-- <span id="tempIcon"></span> -->
+		</div>
 
 		<!-- Temprature calc div ends -->
 
 		<!-- AlgebraSquare calc div ends -->
-			<div class="calc SQUARE 10">
-				<input type="range" name="range" id="rangeSquare" min="10" max="100" value="20" style="border-radius: 20px;">
-			</div>
+		<div class="calc SQUARE 10">
+			<input type="range" name="range" id="rangeSquare" min="10" max="100" value="20"
+				style="border-radius: 20px;">
+		</div>
 		<!-- AlgebraSquare calc div ends -->
-		
+
 
 
 		<div class="calc-type">
@@ -366,7 +369,7 @@
 					</div>
 				</button>
 
-				<button class="select Temprature">
+				<button class="select Temperature">
 
 
 					<div class="option">
@@ -376,9 +379,10 @@
 				</button>
 
 				<button class="select Square">
-
 					<div class="option">
-						<i class="fa-solid fa-x" style="position: relative; top: 5px; left: 5px;"></i><sub style="font-size: 9px; position:  relative; top: -17px;left: 8px;"><i class="fa-solid fa-2"></i></sub>
+						<i class="fa-solid fa-x" style="position: relative; top: 5px; left: 5px;"></i><sub
+							style="font-size: 9px; position:  relative; top: -17px;left: 8px;"><i
+								class="fa-solid fa-2"></i></sub>
 						<p>x²</p>
 					</div>
 				</button>
@@ -390,6 +394,13 @@
 				<h2 id="calc-type">The calc you are using: Age</h2>
 				<h3><span id="calcTypeNum">1</span> - <span id="calcTypeName">Age</span></h3>
 			</div>
+
+			<!-- <div class="calc-show">
+				<h2 id="calc-type">
+					
+				</h2>
+				<h3><span id="calcTypeNum">1</span> - <span id="calcTypeName">Age</span></h3>
+			</div> -->
 
 			<div class="controls">
 				<button type="button" id="Previous">Previous</button>

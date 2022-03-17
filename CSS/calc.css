@@ -34,6 +34,8 @@ html,body{
     --equall-bg-color: #e9594e;
     --backspace-bg-color: #2c2d31;
     
+    --temp-input-color: #fff;
+    --temp-input-placeholder-color: #474747;
 }
 
 body{
@@ -580,7 +582,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* <!-------------- Temprature calc div starts ----------------------> */
 
-.TEMPRATURE{
+.TEMPERATURE{
     justify-content: center !important;
     align-items: center;
     position: relative;
@@ -588,48 +590,48 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 
-.TEMPRATURE .tempInputs {
+.TEMPERATURE .tempInputs {
     z-index: 2;
     display: grid;
-    grid-template-rows: repeat(3 , 89px);
-    grid-template-columns: repeat(1 , 89px);
+    grid-template-rows: repeat(3, 50px);
+    /* grid-template-columns: repeat(1 , 89px); */
 }
 
-.TEMPRATURE .tempInputs input{
+.TEMPERATURE .tempInputs input{
     outline: none;
     border: none;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     font-size: 22px;
-    color: #e3635b;
+    color: #17181b;
     padding: 0px 0px 0px 15px;
 }
 
-.TEMPRATURE ::placeholder{
-    color: #e3635b;
+.TEMPERATURE ::placeholder{
+    color: var(--temp-input-placeholder-color);
 }
 
-.TEMPRATURE .tempInputs #Cel{
+.TEMPERATURE .tempInputs #Cel{
     position: relative; 
     top: -43px;
     box-shadow: 0px 3px 4px 4px #17181b;
-    background: transparent;
+    background: var(--temp-input-color);
 }
 
-.TEMPRATURE .tempInputs #Kel{
+.TEMPERATURE .tempInputs #Kel{
     position: relative; 
     top: 15px;
     box-shadow: 0px 3px 4px 4px #17181b;
-    background: transparent;
+    background: var(--temp-input-color);
 }
 
-.TEMPRATURE .tempInputs #Fah{
+.TEMPERATURE .tempInputs #Fah{
     position: relative; 
     top: -15px;
     box-shadow: 0px 3px 4px 4px #17181b;
-    background: transparent;
+    background: var(--temp-input-color);
 }
 
-.TEMPRATURE #tempIcon .fa-solid{
+.TEMPERATURE #tempIcon .fa-solid{
     font-size: 30rem;
     position: absolute;
     top: 50%;

@@ -3,7 +3,7 @@ let calcTypeNum = document.getElementById('calcTypeNum');
 let calcTypeName = document.getElementById('calcTypeName');
 
 function capitalise (word) {
-    return word[0].toUpperCase() + word.slice(1);
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
 }
 
 /* makes the age calculator as the default one. 
@@ -29,10 +29,16 @@ function onTabClick(event) {
 
     event.target.classList.add('active');
     leftContent.classList.add('active-content');
-    calctype.innerText = `The calc you are using: ${capitalise(event.target.classList[1].toUpperCase())}`;
+    // calctype.innerText = `The calc you are using: ${capitalise(leftContent.children[0])}`;
+    calctype.innerHTML = `This is: ${capitalise(leftContent.classList[1])}`;
+
+    // event.target.replaceChild(event.target.querySelector('i'))
+    // calctype.appendChild(event.target.querySelector('i'))
+
     calcTypeName.innerText = `${event.target.classList[1].toUpperCase()}`;
     calcTypeNum.innerText = parseInt(leftContent.classList[2]);
-    console.log(leftContent);
+    // console.log(leftContent);
+    // console.log(leftContent.children[0])
 }
 
 const options = document.querySelector('.calc-options');
