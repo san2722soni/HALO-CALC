@@ -1,4 +1,4 @@
-let calctype = document.getElementById('calc-type');
+let calctype = document.getElementById('calcTypeIcon');
 let calcTypeNum = document.getElementById('calcTypeNum');
 let calcTypeName = document.getElementById('calcTypeName');
 
@@ -19,6 +19,8 @@ function onTabClick(event) {
     let activeTabs = document.querySelectorAll('.active');
     let leftContent = document.querySelector(`.${event.target.classList[1]}`.toUpperCase());
     let leftContentAll = document.querySelectorAll('.calc');
+    const elem = event.target.querySelector('i');
+    const clone = elem.cloneNode(true);
     
     activeTabs.forEach((tab) => {
         tab.classList.remove('active');
@@ -29,19 +31,18 @@ function onTabClick(event) {
 
     event.target.classList.add('active');
     leftContent.classList.add('active-content');
-    // calctype.innerText = `The calc you are using: ${capitalise(leftContent.children[0])}`;
-    calctype.innerHTML = `This is: ${capitalise(leftContent.classList[1])}`;
-
-    // event.target.replaceChild(event.target.querySelector('i'))
-    // calctype.appendChild(event.target.querySelector('i'))
-
+    calctype.appendChild(clone);
     calcTypeName.innerText = `${event.target.classList[1].toUpperCase()}`;
     calcTypeNum.innerText = parseInt(leftContent.classList[2]);
-    // console.log(leftContent);
-    // console.log(leftContent.children[0])
+
+    // if (calctype.childNodes != 0) {
+    //     calctype.appendChild(clone);
+    // }
+    console.log(calc_type);
 }
 
 const options = document.querySelector('.calc-options');
 options.addEventListener('click', onTabClick, false);
 
 
+//USE SEMICOLON
