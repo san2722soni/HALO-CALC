@@ -29,6 +29,9 @@ function onTabClick(event) {
         calc.classList.remove('active-content');
     })
 
+    // limits the duplication of the icons
+    calctype.innerHTML = ''
+
     event.target.classList.add('active');
     leftContent.classList.add('active-content');
     calctype.appendChild(clone);
@@ -38,7 +41,6 @@ function onTabClick(event) {
     // if (calctype.childNodes != 0) {
     //     calctype.appendChild(clone);
     // }
-    console.log(calc_type);
 }
 
 const options = document.querySelector('.calc-options');

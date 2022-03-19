@@ -1,3 +1,4 @@
+// convert div besides slider into input field - TODO
 function calculate(){
     var bmi;
     var result = document.getElementById("result");
