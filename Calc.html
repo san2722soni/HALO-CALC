@@ -19,398 +19,413 @@
 
 	<div class="splash">
         <div class="splash-img-container">
-            <img class="splash-img" src="./images/transparent math gif.gif" alt="">
+            <img class="splash-img" src="./images/cube loading gif" alt="">
         </div>
-        <p>Loading...</p>
+        <span>Loading...</span>
     </div>
 
-	<div class="calc-container">
+	<div class="calc-container" id="container">
 
-		<div class="calc" id="normal">
+		<div class="nav">
+			<input type="checkbox" id="toggle" onclick="toggleCalc()"/>
+			<label for="toggle"></label>
 
-			<div class="output">
-				<div id="history">
-					<p id="history-value">0</p>
-				</div>
-
-				<div id="output-val">
-					<p id="output-value">0</p>
-				</div>
-
-				<div id="temp-val">
-					<p id="temp-value"> 0</p>
-				</div>
-			</div>
-
-			<div class="keyboard">
-				<button class="operator clear" id="clear">C</button>
-				<button class="number other" id="bracket">(</button>
-				<button class="number other" id="bracket2">)</button>
-				<button class="operator" id="plus">+</button>
-
-				<button class="number" id="7">7</button>
-				<button class="number" id="8">8</button>
-				<button class="number" id="9">9</button>
-
-				<button class="operator" id="x">x</button>
-				<button class="number" id="4">4</button>
-				<button class="number" id="5">5</button>
-				<button class="number" id="6">6</button>
-
-				<button class="operator" id="divide">/</button>
-				<button class="number" id="1">1</button>
-				<button class="number" id="2">2</button>
-				<button class="number" id="3">3</button>
-
-				<button class="operator" id="minus">-</button>
-				<button class="number" id=".">.</button>
-				<button class="number" id="0">0</button>
-
-				<button class="backspace" id="backspace"><i class="fas fa-backspace"></i></button>
-				<button class="equall" id="=">=</button>
-			</div>
+			<i class="fa-solid fa-skull" style="color: #fff; font-size: 40px; cursor: pointer;" onclick="changingPlace()"></i>
 		</div>
 
-		<!-- AGE calc div starts -->
+		<div style="display: flex; justify-content: space-around; width: 100%; align-items: center;">
 
-		<div class="calc AGE 1">
+			<div class="default" id="normal">
 
-			<div class="input_age">
-				<div class="date_age">
-					<input type="date" id="date_input" onclick="hide()">
-				</div>
-				<div class="calculate">
-					<input type="button" value="CALCULATE" onclick="ageCalculate()">
-				</div>
-			</div>
+				<div class="output">
+					<div id="history">
+						<p id="history-value">0</p>
+					</div>
 
-			<div class="output_age" id="appear">
-				<div class="age_now">
-					<h1 style="text-align: left;">AGE</h1>
-					<span id="age-now-years"><span id="year">0</span>years</span>
-					<div style="display: flex; justify-content: space-between;">
-						<span id="age-now-months"><span style="font-size: 20px;">0</span>months</span>
-						<span id="age-now-days"><span style="font-size: 20px;">0</span>days</span>
+					<div id="output-val">
+						<p id="output-value">0</p>
+					</div>
+
+					<div id="temp-val">
+						<p id="temp-value"> 0</p>
 					</div>
 				</div>
 
-				<div class="age_box">
-					<div class="box">
-						<span id="years">-</span>
-						<h3>Years</h3>
+				<div class="keyboard">
+					<button class="operator clear" id="clear">C</button>
+					<button class="number other" id="bracket">(</button>
+					<button class="number other" id="bracket2">)</button>
+					<button class="operator" id="plus">+</button>
+
+					<button class="number" id="7">7</button>
+					<button class="number" id="8">8</button>
+					<button class="number" id="9">9</button>
+
+					<button class="operator" id="x">x</button>
+					<button class="number" id="4">4</button>
+					<button class="number" id="5">5</button>
+					<button class="number" id="6">6</button>
+
+					<button class="operator" id="divide">/</button>
+					<button class="number" id="1">1</button>
+					<button class="number" id="2">2</button>
+					<button class="number" id="3">3</button>
+
+					<button class="operator" id="minus">-</button>
+					<button class="number" id=".">.</button>
+					<button class="number" id="0">0</button>
+
+					<button class="backspace" id="backspace"><i class="fas fa-backspace"></i></button>
+					<button class="equall" id="=">=</button>
+				</div>
+			</div>
+
+			<!-- AGE calc div starts -->
+
+			<div class="calc AGE 1">
+
+				<div class="input_age">
+					<div class="date_age">
+						<input type="date" id="date_input" onclick="hide()">
 					</div>
-					<div class="box">
-						<span id="months">-</span>
-						<h3>months</h3>
-					</div>
-					<div class="box">
-						<span id="days">-</span>
-						<h3>days</h3>
+					<div class="calculate">
+						<input type="button" value="CALCULATE" onclick="ageCalculate()">
 					</div>
 				</div>
-			</div>
-		</div>
-		<!-- AGE calc div ends -->
 
-		<!-- AREA calc div start -->
-
-		<div class="calc AREA 2">
-			<div class="navigate">
-				<i class="fas fa-long-arrow-alt-left" id="main_menu"></i>
-				<i class="fas fa-question-circle" id="question"
-					onclick="showSnackbar('Choose the shape to get area')"></i>
-			</div>
-
-			<div class="shapes" id="s">
-				<div id="s0">
-					<img src="images/square (1).png" width="60px" alt="square">
-					<h3 class="shape_name">square</h3>
-				</div>
-				<div id="s1">
-					<img src="images/rectangular-shape-outline.png" width="80px" alt="square">
-					<h3 class="shape_name">rectangle</h3>
-				</div>
-				<div id="s2">
-					<img src="images/triangle.png" width="70px" alt="square">
-					<h3 class="shape_name">triangle</h3>
-				</div>
-				<div id="s3">
-					<img src="images/new-moon.png" width="60px" alt="square">
-					<h3 class="shape_name">circle</h3>
-				</div>
-				<div id="s4">
-					<img src="images/parallelogram.png" width="80px" alt="square">
-					<h3 class="shape_name">parallelogram</h3>
-				</div>
-				<div id="s5">
-					<img src="images/trapezium.png" width="70px" alt="square">
-					<h3 class="shape_name">trapezium</h3>
-				</div>
-				<div id="s6">
-					<img src="images/circle.png" width="70px" alt="square">
-					<h3 class="shape_name">annulus</h3>
-				</div>
-				<div id="s7">
-					<img src="images/ellipse.png" width="75px" alt="square">
-					<h3 class="shape_name">ellipse</h3>
-				</div>
-			</div>
-
-			<div class="s_img" id="simg">
-				<img src="images/Square-perimeter-removebg-preview.png" id="img_change" alt="square">
-			</div>
-			<div class="Enter_values" id="eN">
-				<h1 id="shape_title">Square</h1>
-				<h4 style="color:#fff;" id="random">
-					Solve for Area
-				</h4>
-				<div>
-					<h1 style="color: #fff;">A = <span id="formula">a<sup style="font-size: 17px;">2</sup></span></h1>
-				</div>
-				<div class="enter_value">
-					<div style="display: flex; justify-content: space-between; flex-direction: column;">
-						<input type="text" id="input_num" placeholder="Enter Value" class="input_fields">
-						<input type="text" id="input_num_2" placeholder="Enter value breath" class="input_fields">
-						<input type="text" id="input_num_3" placeholder="Enter value idk" class="input_fields">
+				<div class="output_age" id="appear">
+					<div class="age_now">
+						<h1 style="text-align: left;">AGE</h1>
+						<span id="age-now-years"><span id="year">0</span>years</span>
+						<div style="display: flex; justify-content: space-between;">
+							<span id="age-now-months"><span style="font-size: 20px;">0</span>months</span>
+							<span id="age-now-days"><span style="font-size: 20px;">0</span>days</span>
+						</div>
 					</div>
-					<button id="done">GO!</button>
-					<style>
-						#done {
-							padding: 7px 15px;
-							background: #ffff;
-							border: none;
-							font-size: 16px;
-						}
-					</style>
-				</div>
-				<div id="show_sol">
-					<h1>Solution</h1>
-					<h2>
-						<span id="here1">A</span> = <span id="here2">a<sup style="font-size: 17px;">2</sup></span> =
-						<span id="value">5</span> = <span id="real_answer"></span>
-					</h2>
+
+					<div class="age_box">
+						<div class="box">
+							<span id="years">-</span>
+							<h3>Years</h3>
+						</div>
+						<div class="box">
+							<span id="months">-</span>
+							<h3>months</h3>
+						</div>
+						<div class="box">
+							<span id="days">-</span>
+							<h3>days</h3>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+			<!-- AGE calc div ends -->
 
-		<!-- AREA calc div ends -->
+			<!-- AREA calc div start -->
+
+			<div class="calc AREA 2">
+				<div class="navigate">
+					<i class="fas fa-long-arrow-alt-left" id="main_menu"></i>
+					<i class="fas fa-question-circle" id="question"
+						onclick="showSnackbar('Choose the shape to get area')"></i>
+				</div>
+
+				<div class="shapes" id="s">
+					<div id="s0">
+						<img src="images/square (1).png" width="60px" alt="square">
+						<h3 class="shape_name">square</h3>
+					</div>
+					<div id="s1">
+						<img src="images/rectangular-shape-outline.png" width="80px" alt="square">
+						<h3 class="shape_name">rectangle</h3>
+					</div>
+					<div id="s2">
+						<img src="images/triangle.png" width="70px" alt="square">
+						<h3 class="shape_name">triangle</h3>
+					</div>
+					<div id="s3">
+						<img src="images/new-moon.png" width="60px" alt="square">
+						<h3 class="shape_name">circle</h3>
+					</div>
+					<div id="s4">
+						<img src="images/parallelogram.png" width="80px" alt="square">
+						<h3 class="shape_name">parallelogram</h3>
+					</div>
+					<div id="s5">
+						<img src="images/trapezium.png" width="70px" alt="square">
+						<h3 class="shape_name">trapezium</h3>
+					</div>
+					<div id="s6">
+						<img src="images/circle.png" width="70px" alt="square">
+						<h3 class="shape_name">annulus</h3>
+					</div>
+					<div id="s7">
+						<img src="images/ellipse.png" width="75px" alt="square">
+						<h3 class="shape_name">ellipse</h3>
+					</div>
+				</div>
+
+				<div class="s_img" id="simg">
+					<img src="images/Square-perimeter-removebg-preview.png" id="img_change" alt="square">
+				</div>
+				<div class="Enter_values" id="eN">
+					<h1 id="shape_title">Square</h1>
+					<h4 style="color:#fff;" id="random">
+						Solve for Area
+					</h4>
+					<div>
+						<h1 style="color: #fff;">A = <span id="formula">a<sup style="font-size: 17px;">2</sup></span>
+						</h1>
+					</div>
+					<div class="enter_value">
+						<div style="display: flex; justify-content: space-between; flex-direction: column;">
+							<input type="text" id="input_num" placeholder="Enter Value" class="input_fields">
+							<input type="text" id="input_num_2" placeholder="Enter value breath" class="input_fields">
+							<input type="text" id="input_num_3" placeholder="Enter value idk" class="input_fields">
+						</div>
+						<button id="done">GO!</button>
+						<style>
+							#done {
+								padding: 7px 15px;
+								background: #ffff;
+								border: none;
+								font-size: 16px;
+							}
+						</style>
+					</div>
+					<div id="show_sol">
+						<h1>Solution</h1>
+						<h2>
+							<span id="here1">A</span> = <span id="here2">a<sup style="font-size: 17px;">2</sup></span> =
+							<span id="value">5</span> = <span id="real_answer"></span>
+						</h2>
+					</div>
+				</div>
+			</div>
+
+			<!-- AREA calc div ends -->
 
 
-		<!-- BMI calc div starts -->
+			<!-- BMI calc div starts -->
 
-		<div class="calc BMI 3">
-			<div class="container">
-				<div class="row">
-					<div class="bmi-inp-container">
+			<div class="calc BMI 3">
+				<div class="container">
+					<div class="row">
+						<input type="number" id="weight_num" placeholder="weight" oninput="calculate()">
+					</div>
+
+					<div class="row">
+						<input type="number" id="height_num" placeholder="height" oninput="calculate()">
+					</div>
+
+					<div class="row">
 						<input type="range" min="20" max="200" value="20" id="weight" oninput="calculate()">
-						<span id="weight-val">20</span>
+						<span id="weight-val">20 kg</span>
 					</div>
-					<p class="bmi-meta-data">Weight [Kilograms - kg]</p>
-				</div>
-				<div class="row">
-					<div class="bmi-inp-container">
+
+					<div class="row">
 						<input type="range" min="100" max="250" value="100" id="height" oninput="calculate()">
-						<span id="height-val">100</span>
+						<span id="height-val">100 cm</span>
 					</div>
-					<p class="bmi-meta-data">Height [Centimeters - cm]</p>
-				</div>
 
-				<p id="result">20.0</p>
-				<p id="category">Normal weight</p>
-			</div>
-		</div>
-
-		<!-- BMI calc div ends -->
-
-		<!-- Length calc div starts -->
-
-		<div class="calc LENGTH 6">
-			<div class="navigate">
-				<i class="fa-solid fa-circle-info"
-					onclick="showSnackbar('Input in any one field , and see results automatically !!')"></i>
-				<i class="fa-solid fa-circle-question"
-					onclick="showSnackbar('Length Converter , Enter values to see measurements')"></i>
-			</div>
-			<div class="lengthInputs">
-				<div class="lengthInput">
-					<label>Feet</label>
-					<input type="number" id="inputFeet" oninput="lengthConverter(this.id,this.value) "
-						placeholder="Feet">
-				</div>
-				<div class="lengthInput">
-					<label>Meters</label>
-					<input type="number" id="inputMeters" oninput="lengthConverter(this.id,this.value) "
-						placeholder="Meters">
-				</div>
-				<div class="lengthInput">
-					<label>Inches</label>
-					<input type="number" id="inputInches" oninput="lengthConverter(this.id,this.value) "
-						placeholder="Inches">
-				</div>
-				<div class="lengthInput">
-					<label>Centimeters</label>
-					<input type="number" id="inputCm" oninput="lengthConverter(this.id,this.value) " placeholder="Cm">
-				</div>
-				<div class="lengthInput">
-					<label>Yards</label>
-					<input type="number" id="inputYards" oninput="lengthConverter(this.id,this.value) "
-						placeholder="Yards">
-				</div>
-				<div class="lengthInput">
-					<label>Kilometers</label>
-					<input type="number" id="inputKm" oninput="lengthConverter(this.id,this.value) "
-						onchange="lengthConverter(this.id,this,value)" placeholder="Km">
-				</div>
-				<div class="lengthInput">
-					<label>Miles</label>
-					<input type="number" id="inputMiles" oninput="lengthConverter(this.id,this.value) "
-						placeholder="Miles">
+					<p id="result">20.0</p>
+					<p id="category">Normal weight</p>
 				</div>
 			</div>
-		</div>
 
-		<!-- Length calc div ends -->
+			<!-- BMI calc div ends -->
 
-		<!-- Temprature calc div ends -->
+			<!-- Length calc div starts -->
 
-		<div class="calc TEMPERATURE 9">
-			<div class="tempInputs">
-				<input type="number" id="Cel" placeholder="Cel" oninput="temperatureConverter(this.id,this.value)"
-					onchange="temperatureConverter(this.id,this.value)">
-
-				<input type="number" id="Fah" placeholder="Fah" oninput="temperatureConverter(this.id,this.value)"
-					onchange="temperatureConverter(this.id,this.value)">
-
-				<input type="number" id="Kel" placeholder="Kel" oninput="temperatureConverter(this.id,this.value)"
-					onchange="temperatureConverter(this.id,this.value)">
-
+			<div class="calc LENGTH 6">
+				<div class="navigate">
+					<i class="fa-solid fa-circle-info"
+						onclick="showSnackbar('Input in any one field , and see results automatically !!')"></i>
+					<i class="fa-solid fa-circle-question"
+						onclick="showSnackbar('Length Converter , Enter values to see measurements')"></i>
+				</div>
+				<div class="lengthInputs">
+					<div class="lengthInput">
+						<label>Feet</label>
+						<input type="number" id="inputFeet" oninput="lengthConverter(this.id,this.value) "
+							placeholder="Feet">
+					</div>
+					<div class="lengthInput">
+						<label>Meters</label>
+						<input type="number" id="inputMeters" oninput="lengthConverter(this.id,this.value) "
+							placeholder="Meters">
+					</div>
+					<div class="lengthInput">
+						<label>Inches</label>
+						<input type="number" id="inputInches" oninput="lengthConverter(this.id,this.value) "
+							placeholder="Inches">
+					</div>
+					<div class="lengthInput">
+						<label>Centimeters</label>
+						<input type="number" id="inputCm" oninput="lengthConverter(this.id,this.value) "
+							placeholder="Cm">
+					</div>
+					<div class="lengthInput">
+						<label>Yards</label>
+						<input type="number" id="inputYards" oninput="lengthConverter(this.id,this.value) "
+							placeholder="Yards">
+					</div>
+					<div class="lengthInput">
+						<label>Kilometers</label>
+						<input type="number" id="inputKm" oninput="lengthConverter(this.id,this.value) "
+							onchange="lengthConverter(this.id,this,value)" placeholder="Km">
+					</div>
+					<div class="lengthInput">
+						<label>Miles</label>
+						<input type="number" id="inputMiles" oninput="lengthConverter(this.id,this.value) "
+							placeholder="Miles">
+					</div>
+				</div>
 			</div>
 
-			<!-- <span id="tempIcon"></span> -->
-		</div>
+			<!-- Length calc div ends -->
 
-		<!-- Temprature calc div ends -->
+			<!-- Temprature calc div ends -->
 
-		<!-- AlgebraSquare calc div ends -->
-		<div class="calc SQUARE 10">
-			<input type="range" name="range" id="rangeSquare" min="10" max="100" value="20"
-				style="border-radius: 20px;">
-		</div>
-		<!-- AlgebraSquare calc div ends -->
+			<div class="calc TEMPERATURE 9">
+				<div class="tempInputs">
+					<input type="number" id="Cel" placeholder="Cel" oninput="temperatureConverter(this.id,this.value)"
+						onchange="temperatureConverter(this.id,this.value)">
 
+					<input type="number" id="Fah" placeholder="Fah" oninput="temperatureConverter(this.id,this.value)"
+						onchange="temperatureConverter(this.id,this.value)">
 
+					<input type="number" id="Kel" placeholder="Kel" oninput="temperatureConverter(this.id,this.value)"
+						onchange="temperatureConverter(this.id,this.value)">
 
-		<div class="calc-type">
-			<div class="type-heading">
-				<h1>Choose the type of calculator you want to use </h1>
+				</div>
+
+				<!-- <span id="tempIcon"></span> -->
 			</div>
 
-			<div class="calc-options">
+			<!-- Temprature calc div ends -->
 
-				<!-- --------------------------------- -->
-				<button class="select age">
-
-
-					<div class="option">
-						<i class="fas fa-birthday-cake white"></i>
-						<p>Age</p>
-					</div>
-				</button>
-
-				<button class="select area">
-
-
-					<div class="option" id="1">
-						<i class="fas fa-arrows-alt-v white"></i>
-						<p>Area</p>
-					</div>
-				</button>
-
-				<button class="select bmi">
-
-
-					<div class="option">
-						<i class="fas fa-weight"></i>
-						<p>BMI</p>
-					</div>
-				</button>
-
-				<button class="select data">
-
-
-					<div class="option">
-						<i class="fas fa-exchange-alt"></i>
-						<p>Data</p>
-					</div>
-				</button>
-
-				<!-- ------------------------------ -->
-				<button class="select energy">
-
-
-					<div class="option">
-						<i class="fa-solid fa-fire-flame-curved"></i>
-						<p>Energy</p>
-					</div>
-				</button>
-
-				<button class="select Length">
-
-					<div class="option">
-						<i class="fas fa-ruler-horizontal"></i>
-						<p>Length</p>
-					</div>
-				</button>
-
-				<button class="select Mass">
-
-
-					<div class="option">
-						<i class="fas fa-weight-hanging"></i>
-						<p>Mass</p>
-					</div>
-				</button>
-
-				<!-- ------------------------------ -->
-
-				<button class="select Speed">
-
-
-					<div class="option">
-						<i class="fas fa-tachometer-alt"></i>
-						<p>Speed</p>
-					</div>
-				</button>
-
-				<button class="select Temperature">
-
-
-					<div class="option">
-						<i class="fas fa-thermometer-three-quarters"></i>
-						<p>Temparature</p>
-					</div>
-				</button>
-
-				<button class="select Square">
-					<div class="option">
-						<i class="fa-solid fa-x" style="position: relative; top: 5px; left: 5px;"></i><sub
-							style="font-size: 9px; position:  relative; top: -17px;left: 8px;"><i
-								class="fa-solid fa-2"></i></sub>
-						<p>x²</p>
-					</div>
-				</button>
-
-				<!-- ------------------------------ -->
+			<!-- AlgebraSquare calc div ends -->
+			<div class="calc SQUARE 10">
+				<input type="range" name="range" id="rangeSquare" min="10" max="100" value="20"
+					style="border-radius: 20px;">
 			</div>
+			<!-- AlgebraSquare calc div ends -->
 
-			<div class="calc-show">
-				<h2 id="calcTypeIcon"></h2>
-				<h3><span id="calcTypeNum">1</span> - <span id="calcTypeName">Age</span></h3>
-			</div>
 
-			<div class="controls">
-				<button type="button" id="Previous">Previous</button>
-				<button type="button" id="Next">Next</button>
+
+			<div class="calc-type" id="advanced">
+				<div class="type-heading">
+					<h1>Choose the type of calculator you want to use </h1>
+				</div>
+
+				<div class="calc-options">
+
+					<!-- --------------------------------- -->
+					<button class="select age">
+
+
+						<div class="option">
+							<i class="fas fa-birthday-cake white"></i>
+							<p>Age</p>
+						</div>
+					</button>
+
+					<button class="select area">
+
+
+						<div class="option" id="1">
+							<i class="fas fa-arrows-alt-v white"></i>
+							<p>Area</p>
+						</div>
+					</button>
+
+					<button class="select bmi">
+
+
+						<div class="option">
+							<i class="fas fa-weight"></i>
+							<p>BMI</p>
+						</div>
+					</button>
+
+					<button class="select data">
+
+
+						<div class="option">
+							<i class="fas fa-exchange-alt"></i>
+							<p>Data</p>
+						</div>
+					</button>
+
+					<!-- ------------------------------ -->
+					<button class="select energy">
+
+
+						<div class="option">
+							<i class="fa-solid fa-fire-flame-curved"></i>
+							<p>Energy</p>
+						</div>
+					</button>
+
+					<button class="select Length">
+
+						<div class="option">
+							<i class="fas fa-ruler-horizontal"></i>
+							<p>Length</p>
+						</div>
+					</button>
+
+					<button class="select Mass">
+
+
+						<div class="option">
+							<i class="fas fa-weight-hanging"></i>
+							<p>Mass</p>
+						</div>
+					</button>
+
+					<!-- ------------------------------ -->
+
+					<button class="select Speed">
+
+
+						<div class="option">
+							<i class="fas fa-tachometer-alt"></i>
+							<p>Speed</p>
+						</div>
+					</button>
+
+					<button class="select Temperature">
+
+
+						<div class="option">
+							<i class="fas fa-thermometer-three-quarters"></i>
+							<p>Temparature</p>
+						</div>
+					</button>
+
+					<button class="select Square">
+						<div class="option">
+							<i class="fa-solid fa-x" style="position: relative; top: 5px; left: 5px;"></i><sub
+								style="font-size: 9px; position:  relative; top: -17px;left: 8px;"><i
+									class="fa-solid fa-2"></i></sub>
+							<p>x²</p>
+						</div>
+					</button>
+
+					<!-- ------------------------------ -->
+				</div>
+
+				<div class="calc-show">
+					<h2 id="calcTypeIcon"></h2>
+					<h3><span id="calcTypeNum">1</span> - <span id="calcTypeName">Age</span></h3>
+				</div>
+
+				<div class="controls">
+					<button type="button" id="Previous">Previous</button>
+					<button type="button" id="Next">Next</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -427,6 +442,7 @@
 <script src="JS/BMI.js"></script>
 <script src="JS/Length.js"></script>
 <script src="JS/Temp.js"></script>
+<script src="JS/easterEgg.js"></script>
 <script src="./JS/SplashScreen.js"></script>
 
 </html>
