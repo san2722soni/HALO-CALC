@@ -17,6 +17,13 @@
 
 <body>
 
+	<div class="splash">
+        <div class="splash-img-container">
+            <img class="splash-img" src="./images/transparent math gif.gif" alt="">
+        </div>
+        <p>Loading...</p>
+    </div>
+
 	<div class="calc-container">
 
 		<div class="calc" id="normal">
@@ -194,12 +201,18 @@
 		<div class="calc BMI 3">
 			<div class="container">
 				<div class="row">
-					<input type="range" min="20" max="200" value="20" id="weight" oninput="calculate()">
-					<span id="weight-val">20 kg</span>
+					<div class="bmi-inp-container">
+						<input type="range" min="20" max="200" value="20" id="weight" oninput="calculate()">
+						<span id="weight-val">20</span>
+					</div>
+					<p class="bmi-meta-data">Weight [Kilograms - kg]</p>
 				</div>
 				<div class="row">
-					<input type="range" min="100" max="250" value="100" id="height" oninput="calculate()">
-					<span id="height-val">100 cm</span>
+					<div class="bmi-inp-container">
+						<input type="range" min="100" max="250" value="100" id="height" oninput="calculate()">
+						<span id="height-val">100</span>
+					</div>
+					<p class="bmi-meta-data">Height [Centimeters - cm]</p>
 				</div>
 
 				<p id="result">20.0</p>
@@ -414,5 +427,6 @@
 <script src="JS/BMI.js"></script>
 <script src="JS/Length.js"></script>
 <script src="JS/Temp.js"></script>
+<script src="./JS/SplashScreen.js"></script>
 
 </html>

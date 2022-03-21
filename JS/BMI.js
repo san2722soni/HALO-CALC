@@ -4,10 +4,10 @@ function calculate(){
     var result = document.getElementById("result");
 
     var weight = parseInt(document.getElementById("weight").value);
-    document.getElementById("weight-val").textContent = weight + " kg";
+    document.getElementById("weight-val").textContent = weight;
 
     var height = parseInt(document.getElementById("height").value);
-    document.getElementById("height-val").textContent = height + " cm";
+    document.getElementById("height-val").textContent = height;
 
     bmi = (weight / Math.pow( (height/100), 2 )).toFixed(1);
     result.textContent = bmi;

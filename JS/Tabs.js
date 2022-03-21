@@ -37,14 +37,7 @@ function onTabClick(event) {
     calctype.appendChild(clone);
     calcTypeName.innerText = `${event.target.classList[1].toUpperCase()}`;
     calcTypeNum.innerText = parseInt(leftContent.classList[2]);
-
-    // if (calctype.childNodes != 0) {
-    //     calctype.appendChild(clone);
-    // }
 }
 
 const options = document.querySelector('.calc-options');
 options.addEventListener('click', onTabClick, false);
-
-
-//USE SEMICOLON
