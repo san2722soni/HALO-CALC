@@ -1,12 +1,12 @@
 const inputBytes = document.getElementById('inputBytes'),
     inputKiloBytes = document.getElementById('inputKiloBytes'),
     inputMegaBytes = document.getElementById('inputMegaBytes'),
-    inputMiles = document.getElementById('inputMiles'),
-    inputMeters = document.getElementById('inputMeters'),
-    inputCm = document.getElementById('inputCm'),
-    inputKm = document.getElementById('inputKm');
+    inputGigaByte = document.getElementById('inputGigaByte'),
+    inputTeraByte = document.getElementById('inputTeraByte'),
+    inputPetaByte = document.getElementById('inputPetaByte'),
+    inputExaByte = document.getElementById('inputExaByte');
 
-function lengthConverter(id, val) {
+function dataConverter(id, val) {
 
     const checkEmptyVal = (elem) => {
         if (val === '') {
@@ -15,21 +15,21 @@ function lengthConverter(id, val) {
     }
 
 
-    let inputTypes = [inputBytes, inputMeters, inputKiloBytes, inputCm, inputMegaBytes, inputKm, inputMiles];
+    let inputTypes = [inputBytes, inputKiloBytes, inputMegaBytes, inputGigaByte, inputTeraByte, inputPetaByte, inputExaByte];
 
-    const FEET = [val / 3.2808, val * 12, val / 0.032808, val * 0.33333, val / 3280.8, val * 0.00018939];
+    const BYTES = [val / 3.2808, val * 12, val / 0.032808, val * 0.33333, val / 3280.8, val * 0.00018939];
 
-    const METERS = [val * 3.2808, val * 39.370, val / 0.01, val * 1.0936, val / 1000, val * 0.00062137];
+    const KILOBYTES = [val * 3.2808, val * 39.370, val / 0.01, val * 1.0936, val / 1000, val * 0.00062137];
 
-    const INCHES = [val * 0.083333, val / 39.370, val / 0.39370, val * 0.027778, val / 39370, val * 0.000015783];
+    const MEGABYTES = [val * 0.083333, val / 39.370, val / 0.39370, val * 0.027778, val / 39370, val * 0.000015783];
 
-    const CM = [val * 0.032808, val / 100, val * 0.39370, val * 0.010936, val / 100000, val * 0.0000062137];
+    const GIGABYTES = [val * 0.032808, val / 100, val * 0.39370, val * 0.010936, val / 100000, val * 0.0000062137];
 
-    const YARDS = [val * 3, val / 1.0936, val * 36, val / 0.010936, val / 1093.6, val * 0.00056818];
+    const TERABYTES = [val * 3, val / 1.0936, val * 36, val / 0.010936, val / 1093.6, val * 0.00056818];
 
-    const KILOMETERS = [val * 3280.8, val * 1000, val * 39370, val * 100000, val * 1093.6, val * 0.62137];
+    const PETABYTES = [val * 3280.8, val * 1000, val * 39370, val * 100000, val * 1093.6, val * 0.62137];
 
-    const MILES = [val * 5280, val / 0.00062137, val * 63360, val / 0.0000062137, val * 1760, val / 0.62137];
+    const EXABYTES = [val * 5280, val / 0.00062137, val * 63360, val / 0.0000062137, val * 1760, val / 0.62137];
 
     switch (id) {
 
@@ -39,26 +39,12 @@ function lengthConverter(id, val) {
             });
 
             newInpType.forEach((elem, index) => {
-                elem.value = FEET[index].toFixed(2);
+                // elem.value = BYTES[index].toFixed(2);
                 
-                if (elem == inputKm || inputMiles) {
-                    elem.value = FEET[index].toFixed(5);
-                }
-                checkEmptyVal(elem)
-            });
-            console.log(newInpType);
-            break;
-
-        case 'inputMeters':
-            var newInpType = inputTypes.filter((elem) => {
-                return elem != inputMeters;
-            });
-
-            newInpType.forEach((elem, index) => {
-                elem.value = METERS[index].toFixed(2);
-                if (elem == inputKm || inputMiles) {
-                    elem.value = METERS[index].toFixed(5);
-                }
+                // if (elem == inputKm || inputMiles) {
+                //     elem.value = BYTES[index].toFixed(5);
+                // }
+                elem.value = parseFloat(BYTES[index].toFixed(4))
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
@@ -70,25 +56,11 @@ function lengthConverter(id, val) {
             });
 
             newInpType.forEach((elem, index) => {
-                elem.value = INCHES[index].toFixed(2);
-                if (elem == inputKm || inputMiles) {
-                    elem.value = INCHES[index].toFixed(5);
-                }
-                checkEmptyVal(elem)
-            });
-            console.log(newInpType);
-            break;
-
-        case 'inputCm':
-            var newInpType = inputTypes.filter((elem) => {
-                return elem != inputCm;
-            });
-
-            newInpType.forEach((elem, index) => {
-                elem.value = CM[index].toFixed(2);
-                if (elem == inputKm || inputMiles) {
-                    elem.value = CM[index].toFixed(4);
-                }
+                // elem.value = KILOBYTES[index].toFixed(2);
+                // if (elem == inputKm || inputMiles) {
+                //     elem.value = KILOBYTES[index].toFixed(5);
+                // }
+                elem.value = parseFloat(KILOBYTES[index].toFixed(4))
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
@@ -100,46 +72,80 @@ function lengthConverter(id, val) {
             });
 
             newInpType.forEach((elem, index) => {
-                elem.value = YARDS[index].toFixed(2);
-                if (elem == inputKm || inputMiles) {
-                    elem.value = YARDS[index].toFixed(4);
-                }
+                // elem.value = MEGABYTES[index].toFixed(2);
+                // if (elem == inputKm || inputMiles) {
+                //     elem.value = MEGABYTES[index].toFixed(5);
+                // }
+                elem.value = MEGABYTES[index].toFixed(4)
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
 
-        case 'inputKm':
+        case 'inputGigaByte':
             var newInpType = inputTypes.filter((elem) => {
-                return elem != inputKm;
+                return elem != inputGigaByte;
             });
 
             newInpType.forEach((elem, index) => {
-                elem.value = KILOMETERS[index].toFixed(2);
-                if (elem == inputKm || inputMiles) {
-                    elem.value = KILOMETERS[index].toFixed(2);
-                }
+                // elem.value = GIGABYTES[index].toFixed(2);
+                // if (elem == inputKm || inputMiles) {
+                //     elem.value = GIGABYTES[index].toFixed(4);
+                // }
+                elem.value = GIGABYTES[index].toFixed(4)
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
 
-        case 'inputMiles':
+        case 'inputTeraByte':
             var newInpType = inputTypes.filter((elem) => {
-                return elem != inputMiles;
+                return elem != inputTeraByte;
             });
 
             newInpType.forEach((elem, index) => {
-                elem.value = MILES[index].toFixed(2);
-                if (elem == inputKm) {
-                    elem.value = MILES[index].toFixed(1);
+                // elem.value = TERABYTES[index].toFixed(2);
+                // if (elem == inputKm || inputMiles) {
+                //     elem.value = TERABYTES[index].toFixed(4);
+                // }
+                elem.value = parseFloat(TERABYTES[index].toFixed(4))
+                checkEmptyVal(elem)
+            });
+            console.log(newInpType);
+            break;
+
+        case 'inputPetaByte':
+            var newInpType = inputTypes.filter((elem) => {
+                return elem != inputPetaByte;
+            });
+
+            newInpType.forEach((elem, index) => {
+                // elem.value = PETABYTES[index].toFixed(2);
+                // if (elem == inputPetaByte || inputMiles) {
+                //     elem.value = PETABYTES[index].toFixed(2);
+                // }
+                elem.value = parseFloat(PETABYTES[index].toFixed(4))
+                checkEmptyVal(elem)
+            });
+            console.log(newInpType);
+            break;
+
+        case 'inputExaByte':
+            var newInpType = inputTypes.filter((elem) => {
+                return elem != inputExaByte;
+            });
+
+            newInpType.forEach((elem, index) => {
+                elem.value = EXABYTES[index].toFixed(2);
+                if (elem == inputExaByte) {
+                    elem.value = EXABYTES[index].toFixed(1);
                 }
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
         default:
-            window.reload();
+            console.log('error')
             break;
     }
 

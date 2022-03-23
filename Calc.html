@@ -33,7 +33,7 @@
 			<i class="fa-solid fa-skull" style="color: #fff; font-size: 40px; cursor: pointer;" onclick="changingPlace()"></i>
 		</div>
 
-		<div style="display: flex; justify-content: space-around; width: 100%; align-items: center;">
+		<div class="multiple-calc-container" style="display: flex; justify-content: space-around; width: 100%; align-items: center;">
 
 			<div class="default" id="normal">
 
@@ -285,6 +285,56 @@
 
 			<!-- Length calc div ends -->
 
+			<!-- Data calc div starts -->
+
+			<div class="calc DATA 6">
+				<div class="navigate">
+					<i class="fa-solid fa-circle-info"
+						onclick="showSnackbar('Input in any one field , and see results automatically !!')"></i>
+					<i class="fa-solid fa-circle-question"
+						onclick="showSnackbar('Length Converter , Enter values to see measurements')"></i>
+				</div>
+				<div class="dataInputs">
+					<div class="dataInput">
+						<label>Byte</label>
+						<input type="number" id="inputByte" oninput="dataConverter(this.id,this.value) "
+							placeholder="Byte">
+					</div>
+					<div class="dataInput">
+						<label>KiloByte</label>
+						<input type="number" id="inputKiloByte" oninput="dataConverter(this.id,this.value) "
+							placeholder="KiloByte">
+					</div>
+					<div class="dataInput">
+						<label>MegaByte</label>
+						<input type="number" id="inputMegaByte" oninput="dataConverter(this.id,this.value) "
+							placeholder="MegaByte">
+					</div>
+					<div class="dataInput">
+						<label>GigaByte</label>
+						<input type="number" id="inputGigaByte" oninput="dataConverter(this.id,this.value) "
+							placeholder="GigaByte">
+					</div>
+					<div class="dataInput">
+						<label>TeraByte</label>
+						<input type="number" id="inputTeraByte" oninput="dataConverter(this.id,this.value) "
+							placeholder="TeraByte">
+					</div>
+					<div class="dataInput">
+						<label>PetaByte</label>
+						<input type="number" id="inputPetaByte" oninput="dataConverter(this.id,this.value) "
+							onchange="dataConverter(this.id,this,value)" placeholder="PetaByte">
+					</div>
+					<div class="dataInput">
+						<label>ExaByte</label>
+						<input type="number" id="inputExaByte" oninput="dataConverter(this.id,this.value) "
+							placeholder="ExaByte">
+					</div>
+				</div>
+			</div>
+
+			<!-- Data calc ends -->
+
 			<!-- Temprature calc div ends -->
 
 			<div class="calc TEMPERATURE 9">
@@ -444,5 +494,6 @@
 <script src="JS/Temp.js"></script>
 <script src="JS/easterEgg.js"></script>
 <script src="./JS/SplashScreen.js"></script>
+<script src="./JS/Data.js"></script>
 
 </html>

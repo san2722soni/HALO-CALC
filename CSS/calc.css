@@ -47,6 +47,7 @@ body{
     background:#2c2c2c;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 .noselect {
@@ -108,6 +109,14 @@ input[type=number]::-webkit-inner-spin-button {
     opacity: 0;
 }
 
+/* splash screen ends */
+
+/* toggling calc */
+.calc {
+    display: none;
+    width: auto;
+}
+
 .active-content {
     display: flex !important;
 }
@@ -125,7 +134,7 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 7px;
     box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 
     0.5em 0.5em 2em #171a1c;
-    transition: 0.5s;
+    transition: width 0.5s;
 }
 
 .calc-container .nav {
@@ -133,13 +142,14 @@ input[type=number]::-webkit-inner-spin-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .calc-container .nav input[type=checkbox] {
     visibility: hidden;
 }
 .calc-container .nav input[type=checkbox]:checked + label {
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
     background-color:#17181b;
 }
 .calc-container .nav input[type=checkbox]:checked + label:before {
@@ -152,36 +162,35 @@ input[type=number]::-webkit-inner-spin-button {
     width: 100px;
     height: 50px;
     border: 6px solid #17181b;
+    background: #17181b;
     border-radius: 99em;
     position: relative;
-    transition: transform 0.75s ease-in-out;
+    /* transition: transform 0.75s ease-in-out; */
     transform-origin: 50% 50%;
     cursor: pointer;
 }
 .calc-container .nav label:before {
-    transition: transform 0.75s ease;
-    transition-delay: 0.5s;
+    transition: transform 0.5s cubic-bezier(0.44, 0.02, 0.48, 0.98), color 0.3s;
+    /* transition-delay: 0.5s; */
     content: "";
     display: block;
     position: absolute;
     width: 35px;
     height: 35px;
-    background-color: #17181b;
+    background-color: #3d3d3d;
     border-radius: 50%;
     top: 2px;
     left: 2px;
 }
 
 @media screen and (max-width: 1060px) {
-    .calc-container {
+    .multiple-calc-container {
         flex-direction: column;
     }
     .calc-container .calc{
         flex-basis: auto !important;
     }
-}
 
-@media screen and (max-width: 1060px) {
     .calc-options {
         margin: 2em 0;
     }
@@ -190,7 +199,6 @@ input[type=number]::-webkit-inner-spin-button {
         width: 4em;
         height: 4em;
     }
-    
 }
 
   .calc-container .calc{ 
@@ -676,6 +684,46 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* <!-------------- Length calc div ends ----------------------> */
 
+/* data calc starts */
+.DATA{
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-family: 'Ubuntu' , sans-serif;
+}
+
+.DATA .navigate{
+    border-bottom: 2px solid #fff;
+    padding-bottom: 20px;
+}
+
+.DATA .dataInputs{
+    display: grid;
+    grid-template-rows: repeat(7 , 68px);
+    grid-template-columns: repeat(1 , 100%);
+}
+
+.DATA .dataInputs .dataInput{
+    width: 100%;
+}
+
+.DATA .dataInputs .dataInput label{
+    position: relative;
+    bottom: 7px;
+    color: #e3635b;
+    
+}
+
+.DATA .dataInputs .dataInput input{
+    width: 100%;
+    outline: none;
+    color: #17181b;
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding: 5px 0px 5px 10px;
+}
+
+/* Data calc ends */
 
 /* <!-------------- Temprature calc div starts ----------------------> */
 

@@ -10,12 +10,15 @@ function capitalise (word) {
 fixing the age calc dissappearing when clicked 2 times when the website has loaded. */
 
 document.body.onload = () => {
-    document.querySelector('.AGE').classList.add('active-content');
-    document.querySelector('.age').classList.add('active');
+    let btn = document.getElementById('toggle');
+    if (btn.checked) {
+        document.querySelector('.AGE').classList.add('active-content');
+        document.querySelector('.age').classList.add('active');
+    }
 }
 
 // The main tab system
-function onTabClick(event) {
+const onTabClick = (event) => {
     let activeTabs = document.querySelectorAll('.active');
     let leftContent = document.querySelector(`.${event.target.classList[1]}`.toUpperCase());
     let leftContentAll = document.querySelectorAll('.calc');

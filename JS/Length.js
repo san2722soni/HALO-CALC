@@ -139,7 +139,7 @@ function lengthConverter(id, val) {
             console.log(newInpType);
             break;
         default:
-            window.reload();
+            location.reload();
             break;
     }
 
