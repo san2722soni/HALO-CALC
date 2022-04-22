@@ -1,6 +1,6 @@
-const inputBytes = document.getElementById('inputBytes'),
-    inputKiloBytes = document.getElementById('inputKiloBytes'),
-    inputMegaBytes = document.getElementById('inputMegaBytes'),
+const inputByte = document.getElementById('inputByte'),
+    inputKiloByte = document.getElementById('inputKiloByte'),
+    inputMegaByte = document.getElementById('inputMegaByte'),
     inputGigaByte = document.getElementById('inputGigaByte'),
     inputTeraByte = document.getElementById('inputTeraByte'),
     inputPetaByte = document.getElementById('inputPetaByte'),
@@ -15,68 +15,56 @@ function dataConverter(id, val) {
     }
 
 
-    let inputTypes = [inputBytes, inputKiloBytes, inputMegaBytes, inputGigaByte, inputTeraByte, inputPetaByte, inputExaByte];
+    let inputTypes = [inputByte, inputKiloByte, inputMegaByte, inputGigaByte, inputTeraByte, inputPetaByte, inputExaByte];
 
-    const BYTES = [val / 3.2808, val * 12, val / 0.032808, val * 0.33333, val / 3280.8, val * 0.00018939];
+    const BYTES = [val / 1000, val / 1000000, val / 1e+9.toFixed(8), val / 1e+12.toFixed(8), val / 1e+15.toFixed(8), val / 1e+18.toFixed(8)];
 
-    const KILOBYTES = [val * 3.2808, val * 39.370, val / 0.01, val * 1.0936, val / 1000, val * 0.00062137];
+    const KILOBYTES = [val * 1000, val / 1000, val / 1e+6.toFixed(8), val / 1e+9.toFixed(8), val / 1e+12.toFixed(8), val / 1e159.toFixed(8)];
 
-    const MEGABYTES = [val * 0.083333, val / 39.370, val / 0.39370, val * 0.027778, val / 39370, val * 0.000015783];
+    const MEGABYTES = [val * 1e+6.toFixed(8), val * 1000, val / 1000, val / 1e+6.toFixed(8), val / 1e+9.toFixed(8), val / 1e+12.toFixed(8)];
 
-    const GIGABYTES = [val * 0.032808, val / 100, val * 0.39370, val * 0.010936, val / 100000, val * 0.0000062137];
+    const GIGABYTES = [val * 0.032808, val / 100, val * 0.39370, val / 1000, val / 100000, val * 0.0000062137];
 
-    const TERABYTES = [val * 3, val / 1.0936, val * 36, val / 0.010936, val / 1093.6, val * 0.00056818];
+    const TERABYTES = [val * 1e+12.toFixed(8), val / 1e+9.toFixed(8), val * 1e+6.toFixed(8), val * 1000, val / 1000, val / 1e+6.toFixed(8)];
 
-    const PETABYTES = [val * 3280.8, val * 1000, val * 39370, val * 100000, val * 1093.6, val * 0.62137];
+    const PETABYTES = [val * 1e+15.toFixed(8), val * 1e+12.toFixed(8), val * 1e+9.toFixed(8), val * 1e+6.toFixed(8), val * 1000, val * 1000];
 
-    const EXABYTES = [val * 5280, val / 0.00062137, val * 63360, val / 0.0000062137, val * 1760, val / 0.62137];
+    const EXABYTES = [val * 1e+18.toFixed(8), val / 1e+15.toFixed(8), val * 1e+12.toFixed(8), val * 1e+9.toFixed(8), val * 1e+6.toFixed(8), val * 1000];
 
     switch (id) {
 
-        case 'inputBytes':
+        case 'inputByte':
             var newInpType = inputTypes.filter((elem) => {
-                return elem != inputBytes;
+                return elem != inputByte;
             });
 
             newInpType.forEach((elem, index) => {
                 // elem.value = BYTES[index].toFixed(2);
-                
-                // if (elem == inputKm || inputMiles) {
-                //     elem.value = BYTES[index].toFixed(5);
-                // }
-                elem.value = parseFloat(BYTES[index].toFixed(4))
+                elem.value = parseFloat(BYTES[index].toFixed(20))
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
 
-        case 'inputKiloBytes':
+        case 'inputKiloByte':
             var newInpType = inputTypes.filter((elem) => {
-                return elem != inputKiloBytes;
+                return elem != inputKiloByte;
             });
 
             newInpType.forEach((elem, index) => {
-                // elem.value = KILOBYTES[index].toFixed(2);
-                // if (elem == inputKm || inputMiles) {
-                //     elem.value = KILOBYTES[index].toFixed(5);
-                // }
-                elem.value = parseFloat(KILOBYTES[index].toFixed(4))
+                elem.value = parseFloat(KILOBYTES[index].toFixed(15))
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
 
-        case 'inputMegaBytes':
+        case 'inputMegaByte':
             var newInpType = inputTypes.filter((elem) => {
-                return elem != inputMegaBytes;
+                return elem != inputMegaByte;
             });
 
             newInpType.forEach((elem, index) => {
-                // elem.value = MEGABYTES[index].toFixed(2);
-                // if (elem == inputKm || inputMiles) {
-                //     elem.value = MEGABYTES[index].toFixed(5);
-                // }
-                elem.value = MEGABYTES[index].toFixed(4)
+                elem.value = parseFloat(MEGABYTES[index].toFixed(15))
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
@@ -88,11 +76,7 @@ function dataConverter(id, val) {
             });
 
             newInpType.forEach((elem, index) => {
-                // elem.value = GIGABYTES[index].toFixed(2);
-                // if (elem == inputKm || inputMiles) {
-                //     elem.value = GIGABYTES[index].toFixed(4);
-                // }
-                elem.value = GIGABYTES[index].toFixed(4)
+                elem.value = parseFloat(GIGABYTES[index].toFixed(15));
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
@@ -105,10 +89,7 @@ function dataConverter(id, val) {
 
             newInpType.forEach((elem, index) => {
                 // elem.value = TERABYTES[index].toFixed(2);
-                // if (elem == inputKm || inputMiles) {
-                //     elem.value = TERABYTES[index].toFixed(4);
-                // }
-                elem.value = parseFloat(TERABYTES[index].toFixed(4))
+                elem.value = parseFloat(TERABYTES[index].toFixed(15))
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
@@ -120,11 +101,7 @@ function dataConverter(id, val) {
             });
 
             newInpType.forEach((elem, index) => {
-                // elem.value = PETABYTES[index].toFixed(2);
-                // if (elem == inputPetaByte || inputMiles) {
-                //     elem.value = PETABYTES[index].toFixed(2);
-                // }
-                elem.value = parseFloat(PETABYTES[index].toFixed(4))
+                elem.value = parseFloat(PETABYTES[index].toFixed(15));
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
@@ -136,16 +113,13 @@ function dataConverter(id, val) {
             });
 
             newInpType.forEach((elem, index) => {
-                elem.value = EXABYTES[index].toFixed(2);
-                if (elem == inputExaByte) {
-                    elem.value = EXABYTES[index].toFixed(1);
-                }
+                elem.value = parseFloat(EXABYTES[index].toFixed(15));
                 checkEmptyVal(elem)
             });
             console.log(newInpType);
             break;
         default:
-            console.log('error')
+            console.log(typeof id)
             break;
     }
 

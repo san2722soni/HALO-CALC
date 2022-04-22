@@ -40,7 +40,7 @@ function lengthConverter(id, val) {
 
             newInpType.forEach((elem, index) => {
                 elem.value = FEET[index].toFixed(2);
-                
+
                 if (elem == inputKm || inputMiles) {
                     elem.value = FEET[index].toFixed(5);
                 }
