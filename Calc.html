@@ -18,22 +18,24 @@
 <body>
 
 	<div class="splash">
-        <div class="splash-img-container">
-            <img class="splash-img" src="./images/cube loading gif" alt="">
-        </div>
-        <span>Loading...</span>
-    </div>
+		<div class="splash-img-container">
+			<img class="splash-img" src="./images/cube loading gif" alt="">
+		</div>
+		<span id="OTP"></span>
+		<span style="margin-top: 10px;">Loading...</span>
+	</div>
 
 	<div class="calc-container" id="container">
 
 		<div class="nav">
-			<input type="checkbox" id="toggle" onclick="toggleCalc()"/>
+			<input type="checkbox" id="toggle" onclick="toggleCalc()" />
 			<label for="toggle"></label>
 
-			<i class="fa-solid fa-skull" style="color: #fff; font-size: 40px; cursor: pointer;" onclick="changingPlace()"></i>
+			<i class="fa-solid fa-skull" style="color: #fff; font-size: 40px;" onclick="changingPlace()"></i>
 		</div>
 
-		<div class="multiple-calc-container" style="display: flex; justify-content: space-around; width: 100%; align-items: center;">
+		<div class="multiple-calc-container"
+			style="display: flex; justify-content: space-around; width: 100%; align-items: center;">
 
 			<div class="default" id="normal">
 
@@ -210,13 +212,13 @@
 
 			<div class="calc BMI 3">
 				<div class="container">
-					<div class="row">
+					<!-- <div class="row">
 						<input type="number" id="weight_num" placeholder="weight" oninput="calculate()">
 					</div>
 
 					<div class="row">
 						<input type="number" id="height_num" placeholder="height" oninput="calculate()">
-					</div>
+					</div> -->
 
 					<div class="row">
 						<input type="range" min="20" max="200" value="20" id="weight" oninput="calculate()">
@@ -287,7 +289,7 @@
 
 			<!-- Data calc div starts -->
 
-			<div class="calc DATA 6">
+			<div class="calc DATA 4">
 				<div class="navigate">
 					<i class="fa-solid fa-circle-info"
 						onclick="showSnackbar('Input in any one field , and see results automatically !!')"></i>
@@ -355,14 +357,21 @@
 
 			<!-- Temprature calc div ends -->
 
-			<!-- AlgebraSquare calc div ends -->
-			<div class="calc SQUARE 10">
-				<input type="range" name="range" id="rangeSquare" min="10" max="100" value="20"
-					style="border-radius: 20px;">
+			<!-- Currency calc div ends -->
+			<div class="calc CURRENCY 10">
+				<div class="wrapper">
+					<div class="currency-container" id="currency-con1">
+						<input id="currency-input" value="1" type="number" min="0">
+						<select name="currencies" id="currency1"></select>
+					</div>
+					<i class="fa-solid fa-arrow-right-arrow-left"></i>
+					<div class="currency-container" id="currency-con2">
+						<p id="converted-val">Enter amount</p>
+						<select name="currencies" id="currency2"></select>
+					</div>
+				</div>
 			</div>
-			<!-- AlgebraSquare calc div ends -->
-
-
+			<!-- Currency calc div ends -->
 
 			<div class="calc-type" id="advanced">
 				<div class="type-heading">
@@ -455,12 +464,10 @@
 						</div>
 					</button>
 
-					<button class="select Square">
+					<button class="select Currency">
 						<div class="option">
-							<i class="fa-solid fa-x" style="position: relative; top: 5px; left: 5px;"></i><sub
-								style="font-size: 9px; position:  relative; top: -17px;left: 8px;"><i
-									class="fa-solid fa-2"></i></sub>
-							<p>x²</p>
+							<i class="fa-solid fa-sack-dollar"></i>
+							<p>Currency</p>
 						</div>
 					</button>
 
@@ -481,10 +488,7 @@
 	</div>
 
 	<!-- Snackbar code here starts-->
-
-	<!-- The actual snackbar -->
 	<div id="snackbar"></div>
-
 	<!--Snackbar code here ends  -->
 </body>
 <script src="JS/calc.js"></script>
@@ -495,5 +499,6 @@
 <script src="JS/easterEgg.js"></script>
 <script src="./JS/SplashScreen.js"></script>
 <script src="./JS/Data.js"></script>
+<script src="./JS/Currency.js"></script>
 
 </html>

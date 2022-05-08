@@ -47,7 +47,7 @@ body{
     background:#2c2c2c;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .noselect {
@@ -100,13 +100,23 @@ input[type=number]::-webkit-inner-spin-button {
     top: 0;
     left: 0;
 
-    background-color: rgb(39, 39, 39);
+    background-color: #262626;
 
     z-index: 1000000;
 }
 
 .idk {
     opacity: 0;
+}
+
+.splash #OTP{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #cd3f45;
+    background-color: #151718;
+    border-radius: 5px;
 }
 
 /* splash screen ends */
@@ -129,7 +139,7 @@ input[type=number]::-webkit-inner-spin-button {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    background: transparent;
+    background-image: linear-gradient(to right , #242526, #252526 , #232324 ,#202122 , #222324 , #1c1c1c);
     padding: 2%;
     border-radius: 7px;
     box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 
@@ -788,6 +798,58 @@ input[type=number]::-webkit-inner-spin-button {
 }
 /* <!-------------- Temprature calc div ends ----------------------> */
 
+/* <!-------------- Currency calc div starts ----------------------> */
+
+.CURRENCY {
+	display: flex;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+.CURRENCY .wrapper {
+	height: 80%;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.CURRENCY .currency-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.CURRENCY .wrapper .currency-container #converted-val {
+	color: white;
+}
+
+.CURRENCY .wrapper .fa-arrow-right-arrow-left:hover {
+	transition: color 0.2s ease-in-out;
+	color: white;
+	cursor: pointer;
+}
+
+.CURRENCY .wrapper .currency-container #currency-input {
+	height: 2.5em;
+}
+
+select {
+	/* margin: 50px; */
+	/* width: 150px; */
+	padding: 5px 35px 5px 5px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 2em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url(../stuff/money.svg) 96% / 15% no-repeat rgb(255, 255, 255);
+}
+
 /* calc , type section starts */
 .calc-container .calc-type{
     flex-basis: 55%;
@@ -954,10 +1016,24 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 
+/* ABOUT - US code starts here  -------------------------------------*/
 
+
+
+/* ABOUT - US code ends here  -------------------------------------*/
 /* Snackbar code here  -------------------------------------*/
 
-/* The snackbar - position it at the bottom and in the middle of the screen */
+/* The snackbar - position it at the bottom and in the middle of the scren */
+
+#snackbarBox{
+    display: grid;
+    place-items: center;
+    border: 2px solid yellow;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+
 #snackbar {
     visibility: hidden;
     min-width: 250px; 
@@ -969,7 +1045,8 @@ input[type=number]::-webkit-inner-spin-button {
     padding: 16px;
     position: fixed; 
     z-index: 1; 
-    left: 50%; 
+    left: 50%;
+    right: 50%;
     bottom: 30px; 
 }
   

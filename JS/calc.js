@@ -31,7 +31,6 @@ numbersEl.forEach(number => {
     });
 });
 
-
 // storing operation value
 operationEl.forEach(operation => {
     operation.addEventListener('click', (e) => {
@@ -91,6 +90,9 @@ equallEl.addEventListener('click', (e) => {
     tempResultEl.innerText = '';
     dis2Num = result;
     dis1Num = '';
+    if (display2El.innerHTML == OTPnum) {
+        window.location.href = "about.html";
+    }
 });
 
 // Adding event for clear-all button
@@ -358,17 +360,6 @@ let main_menu = document.getElementById('main_menu');
 let question = document.getElementById('question');
 
 
-// function checkEnterButton(arrElem) {
-//     [inp, inp2, inp3].forEach(function (element) {
-//         element.addEventListener("keypress", event => {
-//             if (event.key == 13) {
-//                 event.preventDefault();
-//                 console.log(arrElem); 
-//             }
-//         });
-//     });
-// }
-
 //returning to main menu function
 main_menu.onclick = function main_menu() {
     showSnackbar("Main menu");
@@ -419,7 +410,6 @@ shape_name[1].onclick = () => {
         element.addEventListener("input", function () {
             let values = [`L x B`, `${inp.value} x ${inp2.value}`, `${inp.value * inp2.value}`];
             let flag_num = 2;
-            // checkEnterButton(values[2]);
             settingValues(flag_num, values);
         });
     });
@@ -441,7 +431,6 @@ shape_name[2].onclick = () => {
         element.addEventListener("input", function () {
             let values = [formula.innerHTML, `½  x  ${inp.value}  x  ${inp2.value}`, 0.5 * inp.value * inp2.value];
             let flag_num = 2;
-            // checkEnterButton(values[2]);
             settingValues(flag_num, values);
         });
     });
@@ -462,7 +451,6 @@ shape_name[3].onclick = () => {
         element.addEventListener("input", function () {
             let values = [formula.innerHTML, `π x ${inp.value}<sup style="font-size: 17px;">2</sup>`, (22 / 7 * (inp.value * inp.value)).toFixed(2)];
             let flag_num = 1;
-            // checkEnterButton(values[2]);
             settingValues(flag_num, values);
         });
     });
@@ -482,7 +470,6 @@ shape_name[4].onclick = () => {
         element.addEventListener("input", function () {
             let values = [formula.innerHTML, ` ${inp.value} x ${inp2.value} `, inp.value * inp2.value];
             let flag_num = 2;
-            // checkEnterButton(values[2]);
             settingValues(flag_num, values);
         });
     });
@@ -505,7 +492,6 @@ shape_name[5].onclick = () => {
         element.addEventListener("input", function () {
             let values = [formula.innerHTML, ` ( ${inp.value} + ${inp2.value} )/ 2 * ${inp3.value}`, (inp.value * inp2.value)/ 2 * inp3.value];
             let flag_num = 3;
-            // checkEnterButton(values[2]);
             settingValues(flag_num, values);
         });
     });
@@ -529,7 +515,6 @@ shape_name[6].onclick = () => {
         element.addEventListener("input", function () {
             let values = [formula.innerHTML, `π (${inp.value}<sup style="font-size: 13px;">2</sup> - ${inp2.value}<sup style="font-size: 13px;">2</sup>)`, (22/7 * (Math.pow(inp.value, 2) - Math.pow(inp2.value, 2))).toFixed(3)];
             let flag_num = 2;
-            // checkEnterButton(values[2]);
             settingValues(flag_num, values);
         });
     });
@@ -550,7 +535,6 @@ shape_name[7].onclick = () => {
         element.addEventListener("input", function () {
             let values = [formula.innerHTML, `π x ${inp.value} x ${inp2.value}`, (22/7 * inp.value * inp2.value).toFixed(2)];
             let flag_num = 2;
-            // checkEnterButton(values[2]);
             settingValues(flag_num, values);
         });
     });
