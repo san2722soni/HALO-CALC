@@ -11,18 +11,18 @@ const toggleCalc = () => {
 		x.style.display = "none";
 		skullIcon.style.display = "none";
 		document.querySelector(".nav").style.justifyContent = "center";
-
 		advanced.style.display = "grid";
 		container.style.width = "clamp(70%, 80%, 100%)";
+
 
 	} else {
 		advanced.style.display = 'none'
 		container.style.width = 'auto'
-		document.querySelector('.active-content').classList.remove('acitve-content')
-		
-		normal.style.display = "flex !important";
+		x.style.display = "flex";
 		skullIcon.style.display = "block";
 		document.querySelector(".nav").style.justifyContent = "space-between";
+		document.querySelector('.active-content').remove();
+		document.querySelector('.active').classList.remove('active');
 	}
 };
 
@@ -30,9 +30,8 @@ function changingPlace() {
 	advanced.style.display = "none";
 	container.style.width = "auto";
 	btn.parentElement.childNodes[3].style.display = "none";
-
 	let url = "../images/halloween-2837936.png";
-	body = document.getElementsByTagName("body")[0]; // you can use document.body
+	body = document.getElementsByTagName("body")[0];
 	body.style.background = `url(${url})`;
 	body.style.backgroundSize = `cover`;
 	body.style.backgroundRepeat = `no-repeat`;
@@ -51,19 +50,19 @@ function changingPlace() {
 			console.log(element);
 		}
 	}, 2000);
+
+	var audio = new Audio("../media/1song.mp3");
+	audio.play();
 }
 
 const changeNum = (array) => {
 	let currentIndex = array.length,
 		randomIndex;
-
-	// While there remain elements to shuffle...
+	
 	while (currentIndex != 0) {
-		// Pick a remaining element...
 		randomIndex = Math.floor(Math.random() * currentIndex);
 		currentIndex--;
 
-		// And swap it with the current element.
 		[array[currentIndex], array[randomIndex]] = [
 			array[randomIndex],
 			array[currentIndex],
@@ -72,3 +71,20 @@ const changeNum = (array) => {
 
 	return array;
 };
+
+let clue = ['SOMETIMES IMAGES ARE BUTTONS !', `${OTPnum} x 1 = ${OTPnum}`, `NEVER LOSE YOUR SENSE OF WONDER !`,];
+let count = 0;
+document.body.onload = () => {
+	setTimeout(() => {
+		setInterval(() => {
+			showSnackbar(clue[count]);
+			count++;
+
+			if (count == clue.length) {
+				count = 0;
+			}
+			
+		}, 7000);
+	}, 5000);
+}
+

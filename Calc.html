@@ -211,15 +211,14 @@
 			<!-- BMI calc div starts -->
 
 			<div class="calc BMI 3">
+
+				<div class="navigate">
+					<i class="fa-solid fa-circle-info"
+						onclick="showSnackbar('Drag and select !')"></i>
+					<i class="fa-solid fa-circle-question"
+						onclick="showSnackbar('BMI Calculator , Drag to set input')"></i>
+				</div>
 				<div class="container">
-					<!-- <div class="row">
-						<input type="number" id="weight_num" placeholder="weight" oninput="calculate()">
-					</div>
-
-					<div class="row">
-						<input type="number" id="height_num" placeholder="height" oninput="calculate()">
-					</div> -->
-
 					<div class="row">
 						<input type="range" min="20" max="200" value="20" id="weight" oninput="calculate()">
 						<span id="weight-val">20 kg</span>
@@ -340,6 +339,12 @@
 			<!-- Temprature calc div ends -->
 
 			<div class="calc TEMPERATURE 9">
+				<div class="navigate">
+					<i class="fa-solid fa-circle-info"
+						onclick="showSnackbar('Input in any one field , and see results automatically !!')"></i>
+					<i class="fa-solid fa-circle-question"
+						onclick="showSnackbar('Temparature Converter , Enter values to see measurements')"></i>
+				</div>
 				<div class="tempInputs">
 					<input type="number" id="Cel" placeholder="Cel" oninput="temperatureConverter(this.id,this.value)"
 						onchange="temperatureConverter(this.id,this.value)">
@@ -372,11 +377,6 @@
 				</div>
 			</div>
 			<!-- Currency calc div ends -->
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 09669647dab1584d953109cc3e214e1fc28464b9
 
 			<div class="calc-type" id="advanced">
 				<div class="type-heading">
@@ -476,7 +476,6 @@
 						</div>
 					</button>
 
-					<!-- ------------------------------ -->
 				</div>
 
 				<div class="calc-show">
@@ -501,8 +500,8 @@
 <script src="JS/BMI.js"></script>
 <script src="JS/Length.js"></script>
 <script src="JS/Temp.js"></script>
-<script src="JS/easterEgg.js"></script>
 <script src="./JS/SplashScreen.js"></script>
+<script src="JS/easterEgg.js"></script>
 <script src="./JS/Data.js"></script>
 <script src="./JS/Currency.js"></script>
 

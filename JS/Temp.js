@@ -1,32 +1,3 @@
-// const tempIcon = () => {
-//     let icon = document.getElementById('tempIcon');
-
-//     setTimeout(() => {
-//         icon.innerHTML = `<i class="fa-solid fa-temperature-empty"></i>`;
-//     }, 1000);
-
-//     setTimeout(() => {
-//         icon.innerHTML = `<i class="fa-solid fa-temperature-quarter"></i>`;
-//     }, 2000);
-
-//     setTimeout(() => {
-//         icon.innerHTML = `<i class="fa-solid fa-temperature-half"></i>`;
-//     }, 3000);
-
-//     setTimeout(() => {
-//         icon.innerHTML = `<i class="fa-solid fa-temperature-three-quarters"></i>`;
-//     }, 4000);
-
-//     setTimeout(() => {
-//         icon.innerHTML = `<i class="fa-solid fa-temperature-full"></i>`;
-//     }, 5000);
-
-// }
-
-// tempIcon();
-
-// setInterval(tempIcon, 5000);
-
 const inputCel = document.getElementById('Cel');
 const inputFah = document.getElementById('Fah');
 const inputKel = document.getElementById('Kel');
@@ -52,7 +23,6 @@ function temperatureConverter(id, val) {
 
             newInpType.forEach((elem, index) => {
                 elem.value = FAH[index].toFixed(2);
-
                 checkEmptyVal()
             });
 
@@ -66,7 +36,6 @@ function temperatureConverter(id, val) {
 
             newInpType.forEach((elem, index) => {
                 elem.value = KEL[index].toFixed(2);
-
                 checkEmptyVal()
             });
             console.log(newInpType);
@@ -79,7 +48,6 @@ function temperatureConverter(id, val) {
 
             newInpType.forEach((elem, index) => {
                 elem.value = CEL[index];
-
                 checkEmptyVal()
             });
             console.log(newInpType);

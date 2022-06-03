@@ -91,7 +91,7 @@ equallEl.addEventListener('click', (e) => {
     dis2Num = result;
     dis1Num = '';
     if (display2El.innerHTML == OTPnum) {
-        window.location.href = "about.html";
+        window.location.href = "Portfolio.html";
     }
 });
 

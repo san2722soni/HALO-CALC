@@ -20,7 +20,6 @@ const getList = async () => {
 	let jsonData = await getCurrencyPromise();
 	//now you can directly use jsonData
 	let currencies = jsonData.currencies;
-	console.log(currencies);
 
 	let foo = Object.keys(currencies).sort();
 	foo.forEach((ele) => {
@@ -61,7 +60,7 @@ function convert() {
 }
 
 let timeout;
-let doneTypingInterval = 2000;
+let doneTypingInterval = 1000;
 
 // Listen for keystroke events
 currencyInput.addEventListener("keyup", () => {
@@ -77,5 +76,12 @@ currencyInput.addEventListener("keydown", () => {
 swapArrow.addEventListener("click", () => {
 	[currency1.value, currency2.value] = [currency2.value, currency1.value];
 
+	convert();
+});
+
+currency1.addEventListener("change", () => {
+	convert();
+});
+currency2.addEventListener("change", () => {
 	convert();
 });
