@@ -46,7 +46,6 @@ function lengthConverter(id, val) {
                 }
                 checkEmptyVal(elem)
             });
-            console.log(newInpType);
             break;
 
         case 'inputMeters':
@@ -61,7 +60,6 @@ function lengthConverter(id, val) {
                 }
                 checkEmptyVal(elem)
             });
-            console.log(newInpType);
             break;
 
         case 'inputInches':
@@ -76,7 +74,6 @@ function lengthConverter(id, val) {
                 }
                 checkEmptyVal(elem)
             });
-            console.log(newInpType);
             break;
 
         case 'inputCm':
@@ -91,7 +88,6 @@ function lengthConverter(id, val) {
                 }
                 checkEmptyVal(elem)
             });
-            console.log(newInpType);
             break;
 
         case 'inputYards':
@@ -106,7 +102,6 @@ function lengthConverter(id, val) {
                 }
                 checkEmptyVal(elem)
             });
-            console.log(newInpType);
             break;
 
         case 'inputKm':
@@ -121,7 +116,6 @@ function lengthConverter(id, val) {
                 }
                 checkEmptyVal(elem)
             });
-            console.log(newInpType);
             break;
 
         case 'inputMiles':
@@ -136,7 +130,6 @@ function lengthConverter(id, val) {
                 }
                 checkEmptyVal(elem)
             });
-            console.log(newInpType);
             break;
         default:
             location.reload();
@@ -144,8 +137,3 @@ function lengthConverter(id, val) {
     }
 
 }
-
-//NISHIL WORK
-// make better and nice input feild in length calc - DONE
-//correctly round off all the value of input field - DONE
-//if any of the feild is empty , then all will become empty - DONE

@@ -698,6 +698,123 @@ span {
 
 /* <!-------------- Length calc div ends ----------------------> */
 
+/* <!-------------- Mass calc div starts ----------------------> */
+
+.MASS {
+	flex-direction: column !important;
+	justify-content: space-between !important;
+	align-items: center !important;
+	font-family: "Ubuntu", sans-serif;
+}
+
+.MASS .massInputs {
+	display: grid;
+	grid-template-rows: repeat(5, 68px);
+	grid-template-columns: repeat(1, 100%);
+}
+
+.MASS .massInputs .massInput {
+	width: 100%;
+}
+
+.MASS .massInputs .massInput label {
+	position: relative;
+	bottom: 7px;
+	color: #e3635b;
+}
+
+.MASS .massInputs .massInput input {
+	width: 100%;
+	outline: none;
+	color: #17181b;
+	font-size: 13px;
+	margin-bottom: 10px;
+	padding: 5px 0px 5px 10px;
+}
+
+.MASS #mass-animation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.MASS #mass-animation i{
+	color: #fff;
+}
+
+
+/* <!-------------- Mass calc div ends ----------------------> */
+
+/* <!-------------- Speed calc div starts ----------------------> */
+
+.SPEED {
+	flex-direction: column !important;
+	justify-content: space-between !important;
+	align-items: center !important;
+	font-family: "Ubuntu", sans-serif;
+}
+
+.SPEED .speedInputs {
+	display: grid;
+	grid-template-rows: repeat(4, 68px);
+	grid-template-columns: repeat(1, 100%);
+}
+
+.SPEED .speedInputs .speedInput {
+	width: 100%;
+}
+
+.SPEED .speedInputs .speedInput label {
+	position: relative;
+	bottom: 7px;
+	color: #e3635b;
+}
+
+.SPEED .speedInputs .speedInput input {
+	width: 100%;
+	outline: none;
+	color: #17181b;
+	font-size: 13px;
+	margin-bottom: 10px;
+	padding: 5px 0px 5px 10px;
+}
+
+.SPEED #speed-show {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	top: -50px;
+}
+
+
+.SPEED #speed-show .fast{
+	animation: take-off 1s infinite normal ease-in-out;
+}
+
+.SPEED #speed-show .rotate{
+	transform: rotateZ(45deg);
+	animation: take-off 2s infinite normal ease-in-out;
+}
+
+.SPEED #speed-show i{
+	color: #fff;
+	position: relative;
+	animation: take-off 3s infinite normal ease-in-out;
+}
+
+@keyframes take-off {
+	0%{
+		left: -25%;
+	}
+	100%{
+		left: 150%;
+	}
+}
+
+
+
+/* <!-------------- Mass calc div ends ----------------------> */
+
 /* data calc starts */
 .DATA {
 	flex-direction: column !important;

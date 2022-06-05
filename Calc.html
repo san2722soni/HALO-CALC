@@ -213,8 +213,7 @@
 			<div class="calc BMI 3">
 
 				<div class="navigate">
-					<i class="fa-solid fa-circle-info"
-						onclick="showSnackbar('Drag and select !')"></i>
+					<i class="fa-solid fa-circle-info" onclick="showSnackbar('Drag and select !')"></i>
 					<i class="fa-solid fa-circle-question"
 						onclick="showSnackbar('BMI Calculator , Drag to set input')"></i>
 				</div>
@@ -284,7 +283,47 @@
 				</div>
 			</div>
 
-			<!-- Length calc div ends -->
+			<!-- Mass calc div ends -->
+
+			<div class="calc MASS 7">
+				<div class="navigate">
+					<i class="fa-solid fa-circle-info"
+						onclick="showSnackbar('Input in any one field , and see results automatically !!')"></i>
+					<i class="fa-solid fa-circle-question"
+						onclick="showSnackbar('Mass Converter , Enter values to see measurements')"></i>
+				</div>
+				<div class="massInputs">
+					<div class="massInput">
+						<label>Pounds</label>
+						<input type="number" id="inputPound" oninput="massConverter(this.id,this.value) "
+							placeholder="Pound">
+					</div>
+					<div class="massInput">
+						<label>Ounces</label>
+						<input type="number" id="inputOunce" oninput="massConverter(this.id,this.value) "
+							placeholder="Ounce">
+					</div>
+					<div class="massInput">
+						<label>Stones</label>
+						<input type="number" id="inputStone" oninput="massConverter(this.id,this.value) "
+							placeholder="Stone">
+					</div>
+					<div class="massInput">
+						<label>Kilograms</label>
+						<input type="number" id="inputKilogram" oninput="massConverter(this.id,this.value) "
+							placeholder="Kilogram">
+					</div>
+					<div class="massInput">
+						<label>Grams</label>
+						<input type="number" id="inputGram" oninput="massConverter(this.id,this.value) "
+							placeholder="Gram">
+					</div>
+				</div>
+				<div id="mass-animation">
+				</div>
+			</div>
+
+			<!-- Mass calc div ends -->
 
 			<!-- Data calc div starts -->
 
@@ -336,7 +375,44 @@
 
 			<!-- Data calc ends -->
 
-			<!-- Temprature calc div ends -->
+			<!-- Speed calc div ends -->
+
+			<div class="calc SPEED 8">
+				<div class="navigate">
+					<i class="fa-solid fa-circle-info"
+						onclick="showSnackbar('Input in any one field , and see results automatically !!')"></i>
+					<i class="fa-solid fa-circle-question"
+						onclick="showSnackbar('Speed Converter , Enter values to see measurements')"></i>
+				</div>
+				<div class="speedInputs">
+					<div class="speedInput">
+						<label>MPH</label>
+						<input type="number" id="inputMPH" oninput="speedConverter(this.id,this.value) "
+							placeholder="MPH">
+					</div>
+					<div class="speedInput">
+						<label>Knots</label>
+						<input type="number" id="inputKnot" oninput="speedConverter(this.id,this.value) "
+							placeholder="Knot">
+					</div>
+					<div class="speedInput">
+						<label>KPH</label>
+						<input type="number" id="inputKPH" oninput="speedConverter(this.id,this.value) "
+							placeholder="KPH">
+					</div>
+					<div class="speedInput">
+						<label>Mach</label>
+						<input type="number" id="inputMach" oninput="speedConverter(this.id,this.value) "
+							placeholder="Mach">
+					</div>
+				</div>
+					<div id="speed-show">
+					</div>
+			</div>
+
+			<!-- Speed calc div ends -->
+
+			<!-- Temprature calc div starts -->
 
 			<div class="calc TEMPERATURE 9">
 				<div class="navigate">
@@ -504,5 +580,7 @@
 <script src="JS/easterEgg.js"></script>
 <script src="./JS/Data.js"></script>
 <script src="./JS/Currency.js"></script>
+<script src="./JS/Mass.js"></script>
+<script src="./JS/Speed.js"></script>
 
 </html>

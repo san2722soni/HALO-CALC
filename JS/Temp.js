@@ -23,10 +23,9 @@ function temperatureConverter(id, val) {
 
             newInpType.forEach((elem, index) => {
                 elem.value = FAH[index].toFixed(2);
-                checkEmptyVal()
+                checkEmptyVal();
             });
 
-            console.log(newInpType);
             break;
 
         case 'Kel':
@@ -36,9 +35,8 @@ function temperatureConverter(id, val) {
 
             newInpType.forEach((elem, index) => {
                 elem.value = KEL[index].toFixed(2);
-                checkEmptyVal()
+                checkEmptyVal();
             });
-            console.log(newInpType);
             break;
 
         case 'Cel':
@@ -48,9 +46,8 @@ function temperatureConverter(id, val) {
 
             newInpType.forEach((elem, index) => {
                 elem.value = CEL[index];
-                checkEmptyVal()
+                checkEmptyVal();
             });
-            console.log(newInpType);
             break;
 
         default: console.log('hello');
