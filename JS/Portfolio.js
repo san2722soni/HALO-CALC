@@ -18,21 +18,46 @@ document.documentElement.style.setProperty(
 // Email Logic
 const smtpPass = "BC47B8625D1AEEA972ED1279CC26492AFB86";
 const submitBtn = document.querySelector(".contact-form");
-const calcForm = document.getElementById('calcForm');
+const calcForm = document.getElementById("calcForm");
 
 submitBtn.addEventListener("submit", (e) => {
-    e.preventDefault();
+	e.preventDefault();
 
-    emailjs.send("service_26w2up8","template_j652blw",{
-        from_name: document.getElementById('email-inp').value,
-        to_name: 'INVICTUS',
-        message: `The subject is : ${document.getElementById('subject-inp').value} | Message is : ${document.getElementById('description-inp').value}`,
-        reply_to: "",
-    }).then(function(response) {
-        alert('Mail sent successfull');
-     }, function(error) {
-        alert('FAILED...');
-     });
+	emailjs
+		.send("service_26w2up8", "template_j652blw", {
+			from_name: document.getElementById("email-inp").value,
+			to_name: "INVICTUS",
+			message: `The subject is : ${
+				document.getElementById("subject-inp").value
+			} | Message is : ${
+				document.getElementById("description-inp").value
+			}`,
+			reply_to: "",
+		})
+		.then(
+			function (response) {
+				alert("Mail sent successfull");
+			},
+			function (error) {
+				alert("FAILED...");
+			}
+		);
+});
+
+// sweetalert2 logic
+Swal.fire({
+	title: "Hello there!",
+	text: "You have successfully unlocked the portfolio page.",
+	icon: "success",
+	confirmButtonText: "Let's go!",
+	background: "#424652",
+	color: "#fff",
+
+	// Custom classes for styling
+	customClass: {
+		title: "popup-title",
+		confirmButton: "noselect",
+	},
 });
 
 // Copy Links Logic - TODO
