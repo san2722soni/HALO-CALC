@@ -524,6 +524,7 @@ span {
 	justify-content: space-evenly !important;
 	padding: 1% 1% !important;
 	height: 37rem !important;
+	overflow: auto;
 }
 
 .navigate {
@@ -1080,6 +1081,7 @@ select {
 
 .CURRENCY .wrapper .currency-container #currency-input {
 	height: 2.5em;
+	width: 150px;
 }
 
 
