@@ -6,9 +6,6 @@ function capitalise(word) {
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
 }
 
-/* makes the age calculator as the default one. 
-fixing the age calc dissappearing when clicked 2 times when the website has loaded. */
-
 document.body.onload = () => {
     let btn = document.getElementById('toggle');
     if (btn.checked) {

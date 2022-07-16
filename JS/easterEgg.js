@@ -5,7 +5,6 @@ let x = document.getElementById("normal"); // normal numbers calculator
 let idk = document.querySelector(".calc");
 let skullIcon = document.querySelector(".fa-skull");
 
-document.body.onload(console.log(btn.checked));
 const toggleCalc = () => {
 	if (btn.checked) {
 		x.style.display = "none";
@@ -14,15 +13,25 @@ const toggleCalc = () => {
 		advanced.style.display = "grid";
 		container.style.width = "clamp(70%, 80%, 100%)";
 
+		setInterval(() => {
+			$("#hereMultiple").load(window.location.href + " #hereMultiple");
+		}, 1000);
 
 	} else {
 		advanced.style.display = 'none'
 		container.style.width = 'auto'
 		x.style.display = "flex";
+
 		skullIcon.style.display = "block";
 		document.querySelector(".nav").style.justifyContent = "space-between";
 		document.querySelector('.active-content').remove();
 		document.querySelector('.active').classList.remove('active');
+		display1El.innerText = '0';
+		display2El.innerText = '0';
+		dis1Num = '';
+		dis2Num = '';
+		result = '';
+		tempResultEl.innerText = '0';
 	}
 };
 
@@ -58,7 +67,7 @@ function changingPlace() {
 const changeNum = (array) => {
 	let currentIndex = array.length,
 		randomIndex;
-	
+
 	while (currentIndex != 0) {
 		randomIndex = Math.floor(Math.random() * currentIndex);
 		currentIndex--;
@@ -83,7 +92,7 @@ document.body.onload = () => {
 			if (count == clue.length) {
 				count = 0;
 			}
-			
+
 		}, 7000);
 	}, 5000);
 }

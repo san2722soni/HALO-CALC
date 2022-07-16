@@ -1,6 +1,6 @@
 // declaring variables
 const display1El = document.querySelector('#history-value');
-const display2El = document.querySelector('#output-value');
+const display2El = document.querySelector('#output-value-calc');
 const tempResultEl = document.querySelector('#temp-value');
 const numbersEl = document.querySelectorAll('.number');
 const operationEl = document.querySelectorAll('.operator');
