@@ -4,6 +4,8 @@ let container = document.getElementById("container"); // whole calc container
 let x = document.getElementById("normal"); // normal numbers calculator
 let idk = document.querySelector(".calc");
 let skullIcon = document.querySelector(".fa-skull");
+	
+	// $("#hereMultiple").load(window.location.href + " #hereMultiple");
 
 const toggleCalc = () => {
 	if (btn.checked) {
@@ -13,10 +15,6 @@ const toggleCalc = () => {
 		advanced.style.display = "grid";
 		container.style.width = "clamp(70%, 80%, 100%)";
 
-		setInterval(() => {
-			$("#hereMultiple").load(window.location.href + " #hereMultiple");
-		}, 1000);
-
 	} else {
 		advanced.style.display = 'none'
 		container.style.width = 'auto'
@@ -24,7 +22,7 @@ const toggleCalc = () => {
 
 		skullIcon.style.display = "block";
 		document.querySelector(".nav").style.justifyContent = "space-between";
-		document.querySelector('.active-content').remove();
+		document.querySelector('.active-content').classList.remove('active-content');
 		document.querySelector('.active').classList.remove('active');
 		display1El.innerText = '0';
 		display2El.innerText = '0';
