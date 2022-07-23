@@ -39,16 +39,16 @@ body {
 	--temp-input-placeholder-color: #474747;
 }
 
-body{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2% 0px;
-    background:#2c2c2c;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* overflow: hidden; */
+body {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2% 0px;
+	background: #2c2c2c;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
 }
 
 .noselect {
@@ -100,21 +100,21 @@ input[type="number"]::-webkit-inner-spin-button {
 	position: absolute;
 	top: 0;
 	left: 0;
-    background-color: #262626;
+	background-color: #262626;
 	z-index: 1000000;
 }
 
 .idk {
 	opacity: 0;
 }
-.splash #OTP{
-    width: 100px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    color: #cd3f45;
-    background-color: #151718;
-    border-radius: 5px;
+.splash #OTP {
+	width: 100px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #cd3f45;
+	background-color: #151718;
+	border-radius: 5px;
 }
 
 /* splash screen ends */
@@ -129,19 +129,26 @@ input[type="number"]::-webkit-inner-spin-button {
 	display: flex !important;
 }
 
-.calc-container{
-    max-width: 90%;
-    width: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    background-image: linear-gradient(to right , #242526, #252526 , #232324 ,#202122 , #222324 , #1c1c1c);
-    padding: 2%;
-    border-radius: 7px;
-    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 
-    0.5em 0.5em 2em #171a1c;
-    transition: width 0.5s;
+.calc-container {
+	max-width: 90%;
+	width: auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	background-image: linear-gradient(
+		to right,
+		#242526,
+		#252526,
+		#232324,
+		#202122,
+		#222324,
+		#1c1c1c
+	);
+	padding: 2%;
+	border-radius: 7px;
+	box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0.5em 0.5em 2em #171a1c;
+	transition: width 0.5s;
 }
 
 .calc-container .nav {
@@ -338,11 +345,28 @@ input[type="number"]::-webkit-inner-spin-button {
 	background-color: var(--C-bg-color);
 	color: #fff;
 	font-weight: 700;
+	grid-column-start: span 2;
 }
 
 .other {
-	background-color: #4c453a;
+	/* background-color: #4c453a; */
 	color: #bb9f5d;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.other div {
+	text-align: center;
+	position: relative;
+}
+
+.other div i {
+	color: white;
+	background-color: transparent;
+	position: absolute;
+	top: -20px;
+	left: -15px;
 }
 /*calc , keyboard section ends */
 
@@ -533,7 +557,7 @@ span {
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 2px solid #fff;
-    padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 .navigate i {
@@ -603,14 +627,14 @@ span {
 	position: relative;
 }
 
-.BMI .navigate{
+.BMI .navigate {
 	position: absolute;
 	top: 20px;
 	width: 90%;
 }
 
 .BMI .container {
-	width: 100%;	
+	width: 100%;
 }
 .BMI .row {
 	display: flex;
@@ -664,16 +688,15 @@ span {
 
 /* <!-------------- Discount calc div starts ----------------------> */
 
-.DISCOUNT .discountInputs{
+.DISCOUNT .discountInputs {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	
 }
 
-.discountInputs .discountInput{
+.discountInputs .discountInput {
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -682,21 +705,20 @@ span {
 	gap: 0.5rem;
 }
 
-.discountInputs .discountInput label{
+.discountInputs .discountInput label {
 	color: #e3635b;
 }
 
-.discountInputs .discountInput input{
+.discountInputs .discountInput input {
 	width: 100%;
-    outline: none;
-    color: #17181b;
-    font-size: 13px;
-    /* margin-bottom: 10px; */
-    padding: 5px 0px 5px 10px;
+	outline: none;
+	color: #17181b;
+	font-size: 13px;
+	/* margin-bottom: 10px; */
+	padding: 5px 0px 5px 10px;
 }
 
 /* <!-------------- Discount calc div starts ----------------------> */
-
 
 /* <!-------------- Length calc div starts ----------------------> */
 
@@ -774,10 +796,9 @@ span {
 	align-items: center;
 }
 
-.MASS #mass-animation i{
+.MASS #mass-animation i {
 	color: #fff;
 }
-
 
 /* <!-------------- Mass calc div ends ----------------------> */
 
@@ -822,32 +843,29 @@ span {
 	top: -50px;
 }
 
-
-.SPEED #speed-show .fast{
+.SPEED #speed-show .fast {
 	animation: take-off 1s infinite normal ease-in-out;
 }
 
-.SPEED #speed-show .rotate{
+.SPEED #speed-show .rotate {
 	transform: rotateZ(45deg);
 	animation: take-off 2s infinite normal ease-in-out;
 }
 
-.SPEED #speed-show i{
+.SPEED #speed-show i {
 	color: #fff;
 	position: relative;
 	animation: take-off 3s infinite normal ease-in-out;
 }
 
 @keyframes take-off {
-	0%{
+	0% {
 		left: -25%;
 	}
-	100%{
+	100% {
 		left: 150%;
 	}
 }
-
-
 
 /* <!-------------- Mass calc div ends ----------------------> */
 
@@ -1008,77 +1026,84 @@ select {
 }
 
 /* calc , type section starts */
-.calc-container .calc-type{
-    flex-basis: 55%;
-    display: none;
-    align-content: space-around;
-    justify-content: center;
-    font-style: italic;
-    font-weight: 300;
-} 
-
-.calc-container .calc-type .type-heading{
-    color: #dee1e7;
-    letter-spacing: 0.2em;
-    word-spacing: 0.2em;
-    font-size: 0.8em;
-    font-style: normal;
-    margin: 2em 2em;
+.calc-container .calc-type {
+	flex-basis: 55%;
+	display: none;
+	align-content: space-around;
+	justify-content: center;
+	font-style: italic;
+	font-weight: 300;
 }
 
-.calc-container .calc-type .calc-options{
-    display: grid;
-    grid-template-rows: repeat(2 , 100px);
-    grid-template-columns: repeat(auto-fit, 100px);
-    grid-gap: 1.5em;
-    justify-content: center;
+.calc-container .calc-type .type-heading {
+	color: #dee1e7;
+	letter-spacing: 0.2em;
+	word-spacing: 0.2em;
+	font-size: 0.8em;
+	font-style: normal;
+	margin: 2em 2em;
 }
 
-.calc-options .select{
-    display: flex;
-    justify-content: center;
-    align-items:flex-end;
-    position: relative;
-    background: #111314;
-    font-weight: 400;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.5s;
-    width: 7em;
-    height: 7em;
-    /* outline: none; */
-    border: none;
+.calc-container .calc-type .calc-options {
+	display: grid;
+	grid-template-rows: repeat(2, 100px);
+	grid-template-columns: repeat(auto-fit, 100px);
+	grid-gap: 1.5em;
+	justify-content: center;
 }
 
-.calc-options .select:hover{
-    transform: scale(1.05);
-    background-image: linear-gradient(to right , #2d3035, #25282c , #222529 
-    , #202327 , #1e2025 , #17191d);
-    box-shadow: 7px 6px 3px 1px #17181b;
+.calc-options .select {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	position: relative;
+	background: #111314;
+	font-weight: 400;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: transform 0.5s;
+	width: 7em;
+	height: 7em;
+	/* outline: none; */
+	border: none;
 }
 
-.calc-options .select:hover .fas{
-    color: #dee1e7;
+.calc-options .select:hover {
+	transform: scale(1.05);
+	background-image: linear-gradient(
+		to right,
+		#2d3035,
+		#25282c,
+		#222529,
+		#202327,
+		#1e2025,
+		#17191d
+	);
+	box-shadow: 7px 6px 3px 1px #17181b;
 }
 
-.calc-options .select:hover .fa-fire-flame-curved{
-    color: #dee1e7;
+.calc-options .select:hover .fas {
+	color: #dee1e7;
 }
 
-.calc-options .select:hover .far{
-    color: #dee1e7;
+.calc-options .select:hover .fa-fire-flame-curved {
+	color: #dee1e7;
 }
 
-.select .option{
-    text-align: center;
-    -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Old versions of Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
+.calc-options .select:hover .far {
+	color: #dee1e7;
+}
+
+.select .option {
+	text-align: center;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
-    pointer-events: none;
+	pointer-events: none;
 }
 
 .CURRENCY {
@@ -1118,7 +1143,6 @@ select {
 	height: 2.5em;
 	width: 150px;
 }
-
 
 select {
 	/* margin: 50px; */
@@ -1324,35 +1348,35 @@ select {
 
 /* The snackbar - position it at the bottom and in the middle of the scren */
 
-#snackbarBox{
-    display: grid;
-    place-items: center;
-    border: 2px solid yellow;
-    width: 100%;
-    height: 100vh;
-    position: fixed;
+#snackbarBox {
+	display: grid;
+	place-items: center;
+	border: 2px solid yellow;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
 }
 
 #snackbar {
-    visibility: hidden;
-    min-width: 250px; 
-    margin-left: -125px;
-    background-color: #333; 
-    color: #fff;
-    text-align: center; 
-    border-radius: 2px; 
-    padding: 16px;
-    position: fixed; 
-    z-index: 1; 
-    left: 50%;
-    right: 50%;
-    bottom: 30px; 
+	visibility: hidden;
+	min-width: 250px;
+	margin-left: -125px;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 2px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	right: 50%;
+	bottom: 30px;
 }
-  
-  /* Show the snackbar when clicking on a button (class added with JavaScript) */
-  #snackbar.show {
-    visibility: visible; /* Show the snackbar */
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+	visibility: visible; /* Show the snackbar */
+	/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
     However, delay the fade out process for 2.5 seconds */
 	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
 	animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -1548,3 +1572,8 @@ select {
 }
 
 /* ------- */
+.tut-popup-title {
+	color: #f1f1f1;
+	font-family: "Poppins", sans-serif;
+	font-weight: bold;
+}

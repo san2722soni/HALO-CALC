@@ -4,8 +4,8 @@ let container = document.getElementById("container"); // whole calc container
 let x = document.getElementById("normal"); // normal numbers calculator
 let idk = document.querySelector(".calc");
 let skullIcon = document.querySelector(".fa-skull");
-	
-	// $("#hereMultiple").load(window.location.href + " #hereMultiple");
+
+// $("#hereMultiple").load(window.location.href + " #hereMultiple");
 
 const toggleCalc = () => {
 	if (btn.checked) {
@@ -15,21 +15,25 @@ const toggleCalc = () => {
 		advanced.style.display = "grid";
 		container.style.width = "clamp(70%, 80%, 100%)";
 
+		document.querySelector(".AGE").classList.add("active-content");
+		document.querySelector(".age").classList.add("active");
 	} else {
-		advanced.style.display = 'none'
-		container.style.width = 'auto'
+		advanced.style.display = "none";
+		container.style.width = "auto";
 		x.style.display = "flex";
 
 		skullIcon.style.display = "block";
 		document.querySelector(".nav").style.justifyContent = "space-between";
-		document.querySelector('.active-content').classList.remove('active-content');
-		document.querySelector('.active').classList.remove('active');
-		display1El.innerText = '0';
-		display2El.innerText = '0';
-		dis1Num = '';
-		dis2Num = '';
-		result = '';
-		tempResultEl.innerText = '0';
+		document
+			.querySelector(".active-content")
+			.classList.remove("active-content");
+		document.querySelector(".active").classList.remove("active");
+		display1El.innerText = "0";
+		display2El.innerText = "0";
+		dis1Num = "";
+		dis2Num = "";
+		result = "";
+		tempResultEl.innerText = "0";
 	}
 };
 
@@ -79,7 +83,11 @@ const changeNum = (array) => {
 	return array;
 };
 
-let clue = ['SOMETIMES IMAGES ARE BUTTONS !', `${OTPnum} x 1 = ${OTPnum}`, `NEVER LOSE YOUR SENSE OF WONDER !`,];
+let clue = [
+	"SOMETIMES IMAGES ARE BUTTONS !",
+	`${OTPnum} x 1 = ${OTPnum}`,
+	`NEVER LOSE YOUR SENSE OF WONDER !`,
+];
 let count = 0;
 document.body.onload = () => {
 	setTimeout(() => {
@@ -90,8 +98,6 @@ document.body.onload = () => {
 			if (count == clue.length) {
 				count = 0;
 			}
-
 		}, 7000);
 	}, 5000);
-}
-
+};
