@@ -13,6 +13,7 @@ font-family: 'Source Sans Pro', sans-serif; > SUB HEADING*/
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: var(--scroll-padding, 50px);
+	overflow-x: hidden;
 }
 
 *,
@@ -42,12 +43,17 @@ nav {
 	justify-content: center;
 	align-items: center;
 	padding: 1.5% 5%;
-	position: sticky;
+	/* ----- */
+	position: fixed;
 	top: 0;
+	right: 0;
+	/* ----- */
 	background-color: var(--body-bg);
 	filter: drop-shadow(0 0.1rem 0.3rem rgb(0 0 0));
 	/* imp */
 	z-index: 9999;
+	/* ------ */
+	width: 100%;
 }
 
 nav div a h1 {

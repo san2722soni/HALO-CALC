@@ -1283,8 +1283,11 @@ select {
 
 .calc-show h2 {
 	letter-spacing: 2px;
-	font-size: 3em;
 	margin: 0.5em 0em 0em 1em;
+}
+
+.calc-show h2 i {
+	font-size: 48px;
 }
 
 .calc-show h3 {
